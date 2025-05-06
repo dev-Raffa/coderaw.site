@@ -15,15 +15,15 @@ export default function LandingPage() {
       <Header />
       <HeroSection />
       <ServicesSection />
-      {
-      //<IntegrationsSection />
-      //<ToolsSection />
-      }
-
+      {/*
+      <IntegrationsSection />
+      <ToolsSection />
       <BoutiqueSection />
       <AnimatedBeamSection />
       <FlickeringServicesSection />
       <CompanyTabsSection />
+      */}
+
       <FaqSection />
       <Footer />
     </>
