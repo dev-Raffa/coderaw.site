@@ -29,7 +29,12 @@ export function Header() {
               >
                 Serviços
               </Link>
-
+              <Link
+                href="/#products"
+                className="py-3 text-foreground hover:text-primary focus:outline-none"
+              >
+                Produtos
+              </Link>
               <ThemeToggle />
             </div>
           </div>

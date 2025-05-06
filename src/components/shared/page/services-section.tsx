@@ -6,7 +6,7 @@ import { IntegrationsSection } from "./integrations-section";
 
 export const ServicesSection = () => {
     return (
-      <section data-aos="fade-right" className="section">
+      <section data-aos="fade-right" className="section" id="services">
         <h2 className="section-title">
           Serviços sob-medida para transformar seu negócio
         </h2>
