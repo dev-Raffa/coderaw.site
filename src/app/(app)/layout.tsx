@@ -1,5 +1,5 @@
 import { Footer } from "@/components/shared/page/layout/footer";
-import { Header } from "@/components/shared/page/header";
+import { Header } from "@/components/shared/page/layout/header";
 
 export default function AppLayout({
   children,
