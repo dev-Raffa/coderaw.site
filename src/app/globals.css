@@ -93,7 +93,10 @@
 #tools-list-slide {
   --quantity: 12;
   --time: 40s;
+  --item-width: 75px;
+
   width: 100%;
+  min-width: calc((var(--item-width) * var(--quantity) + (var(--quantity) * 8px)));
   overflow: hidden;
   height: 90px;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
@@ -105,6 +108,7 @@
 
     li{
       position: absolute;
+      width: var(--item-width);
       left: 100%;
       animation: autoRun var(--time) linear infinite;
       transition: filter 0.5s;
@@ -114,11 +118,11 @@
 }
 
 @keyframes autoRun {
-  from{
-    left: 100%;
-  }to{
-    left:-50px;
-  }
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--item-width) * -1);
+    }
 }
 
 .section{

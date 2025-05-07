@@ -1,10 +1,13 @@
 import placeholder from "../../../../public/placeholder.svg"
+import spendImage from "../../../app/assets/images/spend-dashboard.png"
+import condoTecImage from "../../../app/assets/images/condotec-dashboard.png"
+
 export const products = [
   {
     name: "SpendManagement",
     description:
       "Soluções avançadas para finanças pessoais e empresariais, ajudando a otimizar gastos e melhorar a gestão financeira.",
-    image: placeholder,
+    image: spendImage,
     features: [
       "Controle de despesas",
       "Relatórios financeiros",
@@ -28,7 +31,7 @@ export const products = [
     name: "Gestão Condominial",
     description:
       "Ferramentas inovadoras para simplificar e aprimorar a administração de condomínios, melhorando a comunicação e eficiência.",
-    image: placeholder,
+    image: condoTecImage,
     features: [
       "Portal do condômino",
       "Gestão financeira",

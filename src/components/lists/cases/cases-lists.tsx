@@ -5,24 +5,24 @@ export const CasesList = () => {
         {cases.map((item, index) => (
           <li
             key={index}
-            className="bg-gray-900 rounded-xl shadow-md overflow-hidden border border-gray-700"
+            className="rounded-xl shadow-md overflow-hidden border border-gray-700"
           >
             <article className="p-6">
               <div className="space-y-3 mb-4">
                 <div>
-                  <h4 className="font-semibold text-sm text-gray-300">
+                  <h4 className="font-semibold text-sm text-muted-foreground">
                     Desafio:
                   </h4>
                   <p className="text-coderaw-text">{item.challenge}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm text-gray-300">
+                  <h4 className="font-semibold text-sm text-muted-foreground">
                     Solução:
                   </h4>
                   <p className="text-coderaw-text">{item.solution}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm text-gray-300">
+                  <h4 className="font-semibold text-sm text-muted-foreground">
                     Resultado:
                   </h4>
                   <p className="text-coderaw-text">{item.result}</p>

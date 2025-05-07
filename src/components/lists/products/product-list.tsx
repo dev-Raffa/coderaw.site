@@ -20,11 +20,11 @@ export const ProductsList = ()=>{
               <h3 className="text-2xl font-bold mb-4 text-coderaw-text">
                 {product.name}
               </h3>
-              <p className="text-gray-300 mb-6">{product.description}</p>
+              <p className="text-muted-foreground mb-6">{product.description}</p>
               <ul className="space-y-2 mb-6">
                 {product.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-gray-300">
-                    <ChevronRight className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}

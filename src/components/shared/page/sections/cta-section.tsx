@@ -1,23 +1,35 @@
+import DotPattern from "@/components/magic-ui/dot-pattern";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 
 export default function Cta() {
   return (
     <section className="section" id="contact" data-aos="fade-up">
-      <div className="section-content justify-center">
-        <div className="grid gap-10 lg:grid-cols-2 items-center bg-gray-900 rounded-xl p-8">
-          <div>
+      <div className="section-content relative justify-center">
+        <DotPattern
+          width={20}
+          height={20}
+          cx={1}
+          cy={1}
+          cr={1}
+          className={cn(
+            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+          )}
+        />
+        <article className="grid gap-10 lg:grid-cols-2 items-center">
+          <section>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
-              Pronto para transformar seu negócio?
+              Pronto para transformar o seu negócio?
             </h2>
-            <p className="text-blue-100 mb-6 text-lg">
+            <p className="text-muted-foreground mb-6 text-lg">
               Entre em contato conosco hoje mesmo e descubra como podemos ajudar
               a impulsionar sua empresa com soluções tecnológicas inovadoras.
             </p>
-          </div>
+          </section>
 
-          <div className="bg-coderaw-bg text-coderaw-text rounded-xl p-6 shadow-lg">
+          <section className="bg-coderaw-bg text-coderaw-text rounded-xl p-6 shadow-lg">
             <h3 className="text-xl font-bold mb-4">Fale Conosco</h3>
             <form className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
@@ -31,7 +43,7 @@ export default function Cta() {
                   <Input
                     id="name"
                     placeholder="Seu nome"
-                    className="bg-gray-800 border-gray-700 text-coderaw-text"
+                    className="border-gray-700 text-coderaw-text"
                   />
                 </div>
                 <div>
@@ -45,7 +57,7 @@ export default function Cta() {
                     id="email"
                     type="email"
                     placeholder="seu@email.com"
-                    className="bg-gray-800 border-gray-700 text-coderaw-text"
+                    className="border-gray-700 text-coderaw-text"
                   />
                 </div>
               </div>
@@ -59,7 +71,7 @@ export default function Cta() {
                 <Input
                   id="company"
                   placeholder="Nome da sua empresa"
-                  className="bg-gray-800 border-gray-700 text-coderaw-text"
+                  className="border-gray-700 text-coderaw-text"
                 />
               </div>
               <div>
@@ -73,13 +85,15 @@ export default function Cta() {
                   id="message"
                   placeholder="Como podemos ajudar?"
                   rows={4}
-                  className="bg-gray-800 border-gray-700 text-coderaw-text"
+                  className="border-gray-700 text-coderaw-text"
                 />
               </div>
-              <Button>Enviar Mensagem</Button>
+              <div className="flex items-center justify-end">
+                <Button>Enviar Mensagem</Button>
+              </div>
             </form>
-          </div>
-        </div>
+          </section>
+        </article>
       </div>
     </section>
   );
