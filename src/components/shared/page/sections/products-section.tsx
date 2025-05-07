@@ -22,16 +22,17 @@ import { ProductsList } from "@/components/lists/products/product-list"
 
 export default function Products() {
   return (
-    <section id="products" className="section" data-aos="fade-right">  
+    <section id="products" className="section" data-aos="fade-right">
       <h2 className="section-title">
         Soluções prontas para levar o seu negócio ao próximo nível
       </h2>
       <p className="section-subtitle">
-        Desenvolvemos soluções proprietárias para atender necessidades específicas do mercado
+        Desenvolvemos soluções proprietárias para atender necessidades
+        específicas do mercado
       </p>
-      <div className="space-y-20">
+      <div className="section-content justify-center">
         <ProductsList />
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { Logo } from "../icons/logo";
-import { ThemeToggle } from "../theme-toggle";
-import { MobileMenu } from "./mobile-menu";
+import { Logo } from "../../icons/logo";
+import { ThemeToggle } from "../../theme-toggle";
+import { MobileMenu } from "../mobile-menu";
 
 export function Header() {
   return (
@@ -35,6 +35,18 @@ export function Header() {
               >
                 Produtos
               </Link>
+              <Link
+                href="/#cases"
+                className="py-3 text-foreground hover:text-primary focus:outline-none"
+              >
+                Cases
+              </Link>
+              <Link
+                href="/#contact"
+                className="py-3 text-foreground hover:text-primary focus:outline-none"
+              >
+                Contato
+              </Link>
               <ThemeToggle />
             </div>
           </div>
@@ -43,10 +55,7 @@ export function Header() {
 
       <div className="h-16 flex justify-between items-center p-4 gap-3 sm:hidden">
         <div>
-          <Link
-            className="h-12 flex items-center rounded-[0.3rem]"
-            href="/"
-          >
+          <Link className="h-12 flex items-center rounded-[0.3rem]" href="/">
             <Logo className="w-3/4 h-auto object-cover" />
           </Link>
         </div>
@@ -55,5 +64,5 @@ export function Header() {
         <MobileMenu />
       </div>
     </>
-  )
+  );
 }

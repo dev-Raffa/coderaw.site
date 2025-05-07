@@ -1,13 +1,13 @@
-import Link from "next/link"
+import Link from "next/link";
 
 import {
   GithubIcon,
   InstagramIcon,
   LinkedinIcon,
-  MailIcon
-} from "lucide-react"
+  MailIcon,
+} from "lucide-react";
 
-import { NewsLetterForm } from "../newsletter-form"
+import { NewsLetterForm } from "../../newsletter-form";
 
 export function Footer() {
   return (
@@ -15,9 +15,7 @@ export function Footer() {
       <div className="w-full space-y-16 py-16">
         <div className="flex flex-col space-y-12 md:flex-row md:justify-between md:items-center md:space-y-0">
           <div>
-            <span className="font-medium text-foreground">
-              Social
-            </span>
+            <span className="font-medium text-foreground">Social</span>
             <ul className="mt-4 list-inside space-y-4">
               <li>
                 <Link
@@ -55,9 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <span className="font-medium text-foreground">
-              Atendimento
-            </span>
+            <span className="font-medium text-foreground">Atendimento</span>
             <ul className="mt-4 list-inside space-y-4">
               <li>
                 <Link
@@ -90,7 +86,7 @@ export function Footer() {
           </span>
 
           <span className="text-xs text-muted-foreground font-medium sm:text-[13px]">
-            Todos os direitos reservados. {" "}
+            Todos os direitos reservados.{" "}
             <Link
               href="/politica-de-privacidade"
               className="hover:text-primary"
@@ -101,5 +97,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -8,7 +8,7 @@ export const ServiceLists = () => {
           <li key={index}>
             <Card className="h-full blur-xs w-full bg-transparent border-2 border-primary  shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-lg  dark:border-slate-700">
               <CardHeader>
-                <CardTitle className="text-base font-semibold text-primary">
+                <CardTitle className="text-base font-semibold">
                   {service.title}
                 </CardTitle>
               </CardHeader>

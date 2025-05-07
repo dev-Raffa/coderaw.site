@@ -4,9 +4,9 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Cta() {
   return (
-    <section className="py-20 bg-blue-600 text-coderaw-text">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 items-center">
+    <section className="section" id="contact" data-aos="fade-up">
+      <div className="section-content justify-center">
+        <div className="grid gap-10 lg:grid-cols-2 items-center bg-gray-900 rounded-xl p-8">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
               Pronto para transformar seu negócio?
@@ -15,17 +15,6 @@ export default function Cta() {
               Entre em contato conosco hoje mesmo e descubra como podemos ajudar
               a impulsionar sua empresa com soluções tecnológicas inovadoras.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-coderaw-bg text-coderaw-text hover:bg-gray-800">
-                Agendar Consulta
-              </Button>
-              <Button
-                variant="outline"
-                className="text-coderaw-text border-coderaw-text hover:bg-blue-700"
-              >
-                Ver Nossos Serviços
-              </Button>
-            </div>
           </div>
 
           <div className="bg-coderaw-bg text-coderaw-text rounded-xl p-6 shadow-lg">
@@ -87,9 +76,7 @@ export default function Cta() {
                   className="bg-gray-800 border-gray-700 text-coderaw-text"
                 />
               </div>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                Enviar Mensagem
-              </Button>
+              <Button>Enviar Mensagem</Button>
             </form>
           </div>
         </div>
