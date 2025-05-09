@@ -20,7 +20,7 @@ export default function Cta() {
         />
         <article className="grid gap-10 lg:grid-cols-2 items-center">
           <section>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
+            <h2 className="text-3xl font-bold font-title tracking-tight sm:text-4xl md:text-5xl mb-4">
               Pronto para transformar o seu negócio?
             </h2>
             <p className="text-muted-foreground mb-6 text-lg">
@@ -30,7 +30,6 @@ export default function Cta() {
           </section>
 
           <section className="bg-coderaw-bg text-coderaw-text rounded-xl p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-4">Fale Conosco</h3>
             <form className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
@@ -89,7 +88,7 @@ export default function Cta() {
                 />
               </div>
               <div className="flex items-center justify-end">
-                <Button>Enviar Mensagem</Button>
+                <Button className="font-title">Enviar Mensagem</Button>
               </div>
             </form>
           </section>

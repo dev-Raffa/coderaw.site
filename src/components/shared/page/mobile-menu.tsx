@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { AlignJustifyIcon } from "lucide-react";
 import { Icon } from "../icons/icon";
+import { subRouters } from "@/components/lists/sub-routers/sub-routers";
 
 export function MobileMenu() {
   return (
@@ -41,21 +42,18 @@ export function MobileMenu() {
         </SheetHeader>
 
         <ul className="flex flex-col space-y-6 p-6">
-          <Link
-            href="/servicos"
-            className="flex items-center gap-3 text-foreground hover:text-primary focus:outline-none"
-          >
-            <div className="h-5 w-1 bg-primary" />
-            Serviços
-          </Link>
-
-          <Link
-            href="/trabalhe-conosco"
-            className="flex items-center gap-3 text-foreground hover:text-primary focus:outline-none"
-          >
-            <div className="h-5 w-1 bg-primary" />
-            Trabalhe conosco
-          </Link>
+          {
+            subRouters.map((router) => (
+              <Link
+                key={`router-${router.label}`}
+                href={router.href}
+                className="flex items-center gap-3 text-foreground hover:text-primary focus:outline-none"
+              >
+                <div className="h-5 w-1 bg-primary" />
+                {router.label}
+              </Link>
+            ))
+          }
         </ul>
       </SheetContent>
     </Sheet>

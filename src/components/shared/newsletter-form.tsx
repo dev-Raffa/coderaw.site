@@ -72,7 +72,7 @@ export function NewsLetterForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>
+                  <FormLabel className="font-title">
                     Conteúdos de tecnologia
                   </FormLabel>
                   <FormControl>
@@ -83,11 +83,11 @@ export function NewsLetterForm() {
               )}
             />
 
-            <Button type="submit" disabled={form.formState.isSubmitting}>
+            <Button className="font-title" type="submit" disabled={form.formState.isSubmitting}>
               {form.formState.isSubmitting ? (
                 <div className="flex items-center gap-2">
                   Registrando
-                  <LoaderIcon className="size-4 animate-spin" /> 
+                  <LoaderIcon className="font-title size-4 animate-spin" /> 
                 </div>
               ): "Inscreva-se" }
             </Button>

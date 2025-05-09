@@ -10,10 +10,10 @@ export const QuestionsList = ()=>{
                         <li key={index}>
                             <AccordionItem value={`item-${index}`} className="w-full ">
                                 <AccordionTrigger>
-                                    <span className="sm:hidden">
+                                    <span className="sm:hidden font-title">
                                         {question.mobile_label}
                                     </span>
-                                    <span className="hidden sm:flex">
+                                    <span className="hidden font-title sm:flex">
                                         {question.desktop_label}
                                     </span>
                                 </AccordionTrigger>

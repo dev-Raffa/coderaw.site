@@ -1,7 +1,7 @@
 export function IntegrationsSection() {
   return (
     <div data-aos="fade-right" className="px-4 py-4 md:px-6 lg:px-8">
-      <h2 className="text-xl text-center font-medium">
+      <h2 className="text-xl font-title text-center font-medium">
         Integre ferramentas externas de forma eficiente
       </h2>
 

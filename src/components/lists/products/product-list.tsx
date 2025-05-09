@@ -17,19 +17,19 @@ export const ProductsList = ()=>{
             }`}
           >
             <article className={index % 2 === 1 ? "order-1 lg:order-2" : ""}>
-              <h3 className="text-2xl font-bold mb-4 text-coderaw-text">
+              <h3 className="text-2xl font-title font-bold mb-4 ">
                 {product.name}
               </h3>
-              <p className="text-muted-foreground mb-6">{product.description}</p>
+              <p className="text-muted-foreground mb-6 font-medium font-semibold">{product.description}</p>
               <ul className="space-y-2 mb-6">
                 {product.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                  <li key={i} className="flex items-center gap-2 text-muted-foreground font-quicksand font-semibold">
                     <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button>
+              <Button className="font-title">
                 Saiba Mais
               </Button>
             </article>
@@ -43,7 +43,7 @@ export const ProductsList = ()=>{
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="w-full h-auto"
+                  className="w-full h-auto object-cover object-center transition-transform duration-300 ease-in-out transform hover:scale-105"
                 />
               </figure>
             </div>

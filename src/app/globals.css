@@ -74,6 +74,7 @@
     [&::-webkit-scrollbar-thumb]:bg-primary
     dark:[&::-webkit-scrollbar-track]:bg-background
     dark:[&::-webkit-scrollbar-thumb]:bg-primary;
+    
   }
 
   body {
@@ -90,10 +91,32 @@
   }
 }
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
 #tools-list-slide {
   --quantity: 12;
   --time: 40s;
-  --item-width: 75px;
+  --item-width: 90px;
 
   width: 100%;
   min-width: calc((var(--item-width) * var(--quantity) + (var(--quantity) * 8px)));
@@ -129,11 +152,12 @@
   @apply relative overflow-hidden min-h-screen pt-[96px] flex flex-col items-center justify-center gap-[16px];
 }
 .section-title {
-  @apply text-3xl font-bold text-primary text-center w-[80%] min-w-[300px];
+  @apply text-3xl font-title font-bold text-primary text-center w-[80%] min-w-[300px];
 }
 .section-subtitle {
-  @apply text-lg font-semibold text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto;
+  @apply text-xl font-semibold text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium;
 }
 .section-content {
-  @apply relative w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12;
+  @apply relative w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
 }
+

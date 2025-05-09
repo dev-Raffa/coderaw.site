@@ -3,13 +3,24 @@ import "./globals.css";
 import { AOSInit } from "@/components/shared/aos-init";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import type { Metadata } from "next";
-import { Michroma } from "next/font/google";
-import { Toaster } from 'sonner';
+import {
+  Michroma,
+  Montserrat,
+} from "next/font/google";
+import { Toaster } from "sonner";
 
 const michroma = Michroma({
   weight: ["400"],
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+  variable: "--font-michroma",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "500","600", "700"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 
 export const metadata: Metadata = {
   title: "Tecnologia | coderaw.io",
@@ -23,11 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${michroma.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-        >
+      <body
+        className={`${michroma.variable}  ${montserrat.className} antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <AOSInit />
           <div className="min-h-screen w-full sm:max-w-6xl sm:w-full sm:mx-auto">
             {children}
