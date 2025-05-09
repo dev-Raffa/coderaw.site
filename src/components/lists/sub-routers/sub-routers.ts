@@ -12,7 +12,7 @@ export const subRouters = [
     href: "/#cases",
   },
   {
-    label: "Contato",
+    label: "Fale conosco",
     href: "/#contact",
   },
 ]

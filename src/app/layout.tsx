@@ -23,8 +23,8 @@ const montserrat = Montserrat({
 
 
 export const metadata: Metadata = {
-  title: "Tecnologia | coderaw.io",
-  description: "Soluções que impulsionam negócios",
+  title: "Consultoria em Software | coderaw.io",
+  description: "Consultoria em software com foco em arquitetura, desenvolvimento sob medida, modernização de sistemas e soluções em nuvem e IA.",
 };
 
 export default function RootLayout({

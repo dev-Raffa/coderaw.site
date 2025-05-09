@@ -24,7 +24,11 @@ export const Navigation = () => {
               <Link
                 key={`router-${router.label}`}
                 href={router.href}
-                className="py-3 text-foreground font-item hover:text-primary focus:outline-none"
+                className={`p-3 rounded-md ${
+                  router.href === "/#contact"
+                    ? "bg-primary hover:bg-background text-background"
+                    : "text-foreground"
+                }  font-item hover:text-primary focus:outline-none`}
               >
                 {router.label}
               </Link>
