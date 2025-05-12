@@ -14,7 +14,9 @@ export default function LandingPage() {
       <Header />
       <HeroSection />
       <ServicesSection />
-      <Products />
+      { /*
+        <Products />
+       */}
       <Cases />
       <About />
       <FaqSection />

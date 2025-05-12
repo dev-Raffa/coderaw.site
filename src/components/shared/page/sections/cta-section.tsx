@@ -18,7 +18,7 @@ export default function Cta() {
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
           )}
         />
-        <article className="grid gap-10 lg:grid-cols-2 items-center">
+        <article className="grid gap-x-10 gap-y-4 lg:grid-cols-2 items-center">
           <section>
             <h2 className="text-3xl font-bold font-title tracking-tight sm:text-4xl md:text-5xl mb-4">
               Pronto para transformar o seu negócio?

@@ -18,7 +18,9 @@ export const ProductsSection = () => {
 }
 */
 
-import { ProductsList } from "@/components/lists/products/product-list"
+import { ProductsList } from "@/components/lists/products/product-list";
+import DotPattern from "@/components/magic-ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 export default function Products() {
   return (

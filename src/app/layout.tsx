@@ -21,7 +21,6 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-
 export const metadata: Metadata = {
   title: "Consultoria em Software | coderaw.io",
   description: "Consultoria em software com foco em arquitetura, desenvolvimento sob medida, modernização de sistemas e soluções em nuvem e IA.",

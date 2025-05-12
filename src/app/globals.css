@@ -149,7 +149,7 @@
 }
 
 .section{
-  @apply relative overflow-hidden min-h-screen pt-[96px] flex flex-col items-center justify-center gap-[16px];
+  @apply relative overflow-hidden min-h-screen pt-[24px] lg:pt-[96px] flex flex-col items-center justify-center gap-[16px];
 }
 .section-title {
   @apply text-3xl font-title font-bold text-primary text-center w-[80%] min-w-[300px];
