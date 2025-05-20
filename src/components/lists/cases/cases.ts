@@ -1,40 +1,39 @@
 import placeholderImage from "../../../../public/placeholder.svg"
 
-type TService = {
-  label: string;
-  icon: React.ElementType;
-};
 
 type TCase = {
-  client: string;
-  industry: string;
+  name: string;
   description: string;
   image: string;
-  services: TService[];
+  testemonial: string;
 };
 
 export const cases: TCase[] = [
   {
-    client: "SmartConsig",
-    industry: "Tecnologia",
+    name: "SmartConsig",
     description:
       "Redução de 40% nos custos operacionais e aumento de 60% na velocidade de processamento",
     image: placeholderImage,
-    services: [],
+    testemonial: ""
   },
   {
-    client: "FinanceGroup",
-    industry: "Finanças",
+    name: "BeeConversa",
     description: "Desenvolvimento de middleware personalizado com APIs RESTful",
     image: placeholderImage,
-    services: [],
+    testemonial: ""
   },
   {
-    client: "HealthPlus",
-    industry: "Saúde",
+    name: "Spend Management",
     description:
       "Plataforma em nuvem com criptografia avançada e conformidade com LGPD",
     image: placeholderImage,
-    services: [],
+    testemonial: ""
+  },
+  {
+    name: "CondoTec",
+    description:
+      "Plataforma em nuvem com criptografia avançada e conformidade com LGPD",
+    image: placeholderImage,
+    testemonial: ""
   },
 ];

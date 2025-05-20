@@ -5,12 +5,10 @@ import { ThemeToggle } from "../../theme-toggle";
 import { MobileMenu } from "../mobile-menu";
 import { Navigation } from "../navigation";
 
-
-
 export function Header() {
   return (
     <>
-      <header className="hidden sm:flex flex-wrap sticky top-0 inset-x-0 md:justify-start md:flex-nowrap z-50 w-full text-sm">
+      <header className="hidden sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-start md:flex-nowrap z-50 w-full h-[100px] text-sm">
         <Navigation />
       </header>
 

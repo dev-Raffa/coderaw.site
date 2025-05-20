@@ -15,7 +15,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
 
   useEffect(() => {
     setMounted(true)
-    setTheme('dark')
+    setTheme('light')
   }, [setTheme]);
 
   const toggleTheme = () => {

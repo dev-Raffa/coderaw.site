@@ -1,5 +1,3 @@
-"use client";
-
 import { ServiceLists } from "@/components/lists/services/service-lists";
 import { HeroPattern } from "../../hero-pattern";
 import { IntegrationsSection } from "../integrations-section";

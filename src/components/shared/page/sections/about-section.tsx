@@ -1,8 +1,4 @@
 import { ReasonsList } from "@/components/lists/reasons/reasons-list";
-import TeamSection from "./team-section";
-import DotPattern from "@/components/magic-ui/dot-pattern";
-import { cn } from "@/lib/utils";
-import GridPattern from "@/components/magic-ui/grid-pattern";
 
 export default function About() {
   return (
@@ -13,10 +9,9 @@ export default function About() {
         soluções inovadoras e de alta qualidade para impulsionar o sucesso dos
         nossos clientes.
       </p>
-      <div className="section-content justify-center">
+      <div className="section-content">
         <div className="flex flex-col items-center">
           <ReasonsList />
-          <TeamSection />
         </div>
       </div>
     </section>

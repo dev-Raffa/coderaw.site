@@ -1,29 +1,61 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { serviceList } from "./services-list"
+"use client"
 
+import "./services.css"; // use seu CSS adaptado para React
+import Image from "next/image";
+import { serviceList } from "./services-list";
+//import {useGSAP } from "@gsap/react"
+//import gsap from "gsap";
+//import { useRef } from "react";
+//import ScrollTrigger from "gsap/ScrollTrigger";
+
+//gsap.registerPlugin(useGSAP)
+//gsap.registerPlugin(ScrollTrigger)
 export const ServiceLists = () => {
-    return (
-      <ul role="list" className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 pt-[16px]">
-        {serviceList.map((service, index) => (
-          <li key={index}>
-            <Card className="h-full blur-xs w-full bg-transparent border-2 border-primary  shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-lg  dark:border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-base font-title font-semibold">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul role="list" className="list-disc marker:primary pl-5">
-                  {service.description.map((item, index) => (
-                    <li key={index} className="text-sm text-muted-foreground">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+  //const serviceListRef = useRef<HTMLDivElement>(null);
+  const highlightedServices = serviceList.filter((service)=> service.highlight === true)
+  
+  /*
+  useGSAP(()=>{
+    
+    const cards = gsap.utils.toArray<HTMLDivElement>(".card-service")
+
+    cards.forEach((card, index)=>{
+      index === 0 ? (
+        gsap.to(card, {
+          scrollTrigger:{
+            trigger: ".sevice-list",
+            start: "top 100px",
+            end: "center center"
+          },
+          opacity: 1,
+          scale: 1,
+        })
+      ):(
+        console.log(card)
+      )
+
+    })
+  }, {})
+*/
+
+  return (
+    <ul id="service-list" className="service-list" >
+      {highlightedServices.map((service, index) => {
+        return (
+          <li key={`card-service-${service.title}`} className="card-service">
+            <article className="card-service-text">
+              <h3>{service.title}</h3>
+              <p>
+                {service.description}
+              </p>
+            </article>
+            {/*@ts-expect-error */}
+            <figure className="card-service-image" style={{ "--card-number": index }}>
+              <Image src={service.imageUrl} alt={service.title} fill loading="lazy" className="object-cover"></Image>
+            </figure>
           </li>
-        ))}
-      </ul>
-    );
-}
+        );
+      })}
+    </ul>
+  );
+};

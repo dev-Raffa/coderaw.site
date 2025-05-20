@@ -17,7 +17,7 @@
     --popover: 0, 0%, 99.61%;
     --popover-foreground: 120, 100%, 0.39%;
     --primary: 196, 100%, 58.82%;
-    --primary-foreground: 0, 0%, 99.61%;
+    --primary-foreground: 196, 100%, 58.82%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 196, 100%, 58.82%;
     --muted: 240 4.8% 95.9%;
@@ -149,15 +149,66 @@
 }
 
 .section{
-  @apply relative overflow-hidden min-h-screen pt-[24px] lg:pt-[96px] flex flex-col items-center justify-center gap-[16px];
+  @apply relative min-h-screen pt-[24px] lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
 }
 .section-title {
-  @apply text-3xl font-title font-bold text-primary text-center w-[80%] min-w-[300px];
+  @apply text-3xl font-title font-bold text-black text-center w-[80%] min-w-[300px];
 }
 .section-subtitle {
-  @apply text-xl font-semibold text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium;
+  @apply text-xl font-medium text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium;
 }
 .section-content {
   @apply relative w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
 }
 
+.text-area {
+  border: none;
+  outline: none;
+  background-color: rgba(245, 243, 243, 0.753);
+  border-radius: 5px;
+  -webkit-user-drag: none;
+}
+
+input {
+  outline: none;
+  background-color: rgba(245, 243, 243, 0.753) !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.checkbox-service{
+  border-radius: 5px;
+  border: hsl(var(--primary)) 0.5px solid;
+  position: relative;
+  padding: 2px 6px;
+  font-size: 14px;
+  color: #898888;
+  transition: all ease 0.5s;
+
+  input[type="checkbox"]{
+    appearance: none;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent !important;
+  }
+
+  &:has(input:checked){
+    background-color: hsl(196deg 100% 58.82% / 42%) !important;
+    color: #4e4e4e;
+  }
+}
+
+#about {
+  min-height: unset !important;
+ 
+  .section-content{
+  min-height: unset;
+ }
+}

@@ -1,0 +1,117 @@
+.service-list{
+    --font-title: 36px;
+    --font-text: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    flex-direction: column;
+
+    li{
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        
+        padding-bottom: 50px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 120px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        article{
+            background-color: white;
+            width: 59%;
+            min-width: 320px;
+
+            @media screen and (min-width: 1024px) {
+                width: calc(50% - 24px);
+            }
+    
+            h3{
+                font-size: var(--font-title);
+                margin-bottom: 12px;
+                text-align: initial;
+                font-family: var(--font-michroma);
+                font-weight: 500;
+            }
+
+            p{
+                font-size: var(--font-text);
+                text-align: initial;
+                color: hsl(var(--muted-foreground));
+            }
+        }
+
+        figure{
+            position: relative;
+            height: 400px;
+            min-width: 250px;
+            border-radius: 15px;
+            box-shadow: #013343 0 0 3px 1px;
+            width: 40%;
+            background-color: aqua;
+            overflow: hidden;
+        }
+
+        &:not(:first-child) {
+            article{
+                opacity: 0;
+                -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	            animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                animation-timeline: view();
+                animation-range: entry 130%;
+            }
+            
+            figure {
+                height: calc(400px - (var(--card-number) * 2px));
+                top: calc((var(--card-number) * 2px));
+                transform: translateY(100%);
+                animation: slide-in linear forwards;
+                animation-timeline: view();
+                animation-range: entry 10%;
+            }
+        }
+
+    }
+}
+
+@keyframes appear {
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-in {
+    to{
+        transform: translateY(0);
+    }
+}
+
+ @-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  

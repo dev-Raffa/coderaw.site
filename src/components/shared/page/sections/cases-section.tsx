@@ -1,5 +1,4 @@
-import { SuccessCasesGrid } from "@/components/lists/cases/grid-cases-lists";
-import { SuccessCasesTimeline } from "@/components/lists/cases/timeline-case-lists";
+import { CasesList } from "@/components/lists/cases/grid-cases-lists";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { cn } from "@/lib/utils";
 
@@ -11,9 +10,8 @@ export default function Cases() {
         Conheça alguns dos projetos que desenvolvemos e os resultados que
         alcançamos
       </p>
-      <div className="section-content justify-center">
-        <SuccessCasesGrid />
-        
+      <div className="section-content">
+        <CasesList />        
       </div>
       <DotPattern
         width={10}

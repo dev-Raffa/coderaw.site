@@ -1,13 +1,16 @@
 import "./globals.css";
 
 import { AOSInit } from "@/components/shared/aos-init";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 import type { Metadata } from "next";
 import {
   Michroma,
   Montserrat,
+  Poppins,
 } from "next/font/google";
 import { Toaster } from "sonner";
+import { Footer } from "@/components/shared/page/layout/footer";
+import { TopGradient } from "@/components/shared/top-gradient";
+import { Header } from "@/components/shared/page/layout/header";
 
 const michroma = Michroma({
   weight: ["400"],
@@ -19,6 +22,12 @@ const montserrat = Montserrat({
   weight: ["400", "500","600", "700"],
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -34,15 +43,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${michroma.variable}  ${montserrat.className} antialiased`}
+        className={`${michroma.variable}  ${poppins.className} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <AOSInit />
-          <div className="min-h-screen w-full sm:max-w-6xl sm:w-full sm:mx-auto">
-            {children}
-          </div>
-          <Toaster richColors />
-        </ThemeProvider>
+        <AOSInit />
+        <TopGradient />
+        <Header />
+        <main className="min-h-screen w-full sm:max-w-6xl sm:w-full sm:pb-[64px] sm:mx-auto">
+          {children}
+        </main>
+        <Toaster richColors />
+        <Footer />
       </body>
     </html>
   );

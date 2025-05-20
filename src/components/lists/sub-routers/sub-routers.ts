@@ -12,9 +12,5 @@ export const subRouters = [
   {
     label: "Cases",
     href: "/#cases",
-  },
-  {
-    label: "Fale conosco",
-    href: "/#contact",
-  },
+  }
 ]
