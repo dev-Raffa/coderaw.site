@@ -4,7 +4,7 @@ import Image from "next/image"
 
 interface IconProps {
   className?: string
-  color: "black" | "white"
+  color?: "black" | "white"
 }
 
 export function Icon({ className, color= "black" }: IconProps) {

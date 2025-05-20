@@ -11,7 +11,7 @@ export default function Cases() {
         alcançamos
       </p>
       <div className="section-content">
-        <CasesList />        
+        <CasesList />
       </div>
       <DotPattern
         width={10}
@@ -19,10 +19,13 @@ export default function Cases() {
         cx={1}
         cy={1}
         cr={1}
-        className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
-            " h-[200px]"
-        )}
+        className={
+          (cn(
+            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
+              " h-[200px]"
+          )
+          )
+        }
       />
     </section>
   );

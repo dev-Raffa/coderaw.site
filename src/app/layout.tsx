@@ -11,6 +11,7 @@ import { Toaster } from "sonner";
 import { Footer } from "@/components/shared/page/layout/footer";
 import { TopGradient } from "@/components/shared/top-gradient";
 import { Header } from "@/components/shared/page/layout/header";
+import { BackToTopButton } from "@/components/shared/buttons/backToTop.component";
 
 const michroma = Michroma({
   weight: ["400"],
@@ -47,8 +48,9 @@ export default function RootLayout({
       >
         <AOSInit />
         <TopGradient />
+        <BackToTopButton />
         <Header />
-        <main className="min-h-screen w-full sm:max-w-6xl sm:w-full sm:pb-[64px] sm:mx-auto">
+        <main className="min-h-screen sm:pb-[64px]">
           {children}
         </main>
         <Toaster richColors />

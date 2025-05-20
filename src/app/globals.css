@@ -68,10 +68,10 @@
 @layer base {
   * {
     @apply border-border
-    [&::-webkit-scrollbar]:w-2
+    [&::-webkit-scrollbar]:w-3
     [&::-webkit-scrollbar-track]:bg-background
     [&::-webkit-scrollbar-thumb]:rounded-[0.3rem]
-    [&::-webkit-scrollbar-thumb]:bg-primary
+    [&::-webkit-scrollbar-thumb]:bg-black
     dark:[&::-webkit-scrollbar-track]:bg-background
     dark:[&::-webkit-scrollbar-thumb]:bg-primary;
     
@@ -149,7 +149,7 @@
 }
 
 .section{
-  @apply relative min-h-screen pt-[24px] lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
+  @apply relative min-h-screen pt-[24px] w-full px-12 md:px-16 lg:px-24 lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
 }
 .section-title {
   @apply text-3xl font-title font-bold text-black text-center w-[80%] min-w-[300px];
@@ -211,4 +211,11 @@ input {
   .section-content{
   min-height: unset;
  }
+}
+
+#cases {
+  background-color: #000;
+  .section-title{
+    color: white;
+  }
 }
