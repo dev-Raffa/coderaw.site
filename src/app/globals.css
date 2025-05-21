@@ -74,7 +74,6 @@
     [&::-webkit-scrollbar-thumb]:bg-black
     dark:[&::-webkit-scrollbar-track]:bg-background
     dark:[&::-webkit-scrollbar-thumb]:bg-primary;
-    
   }
 
   body {
@@ -85,7 +84,8 @@
       @apply transition-all translate-y-0 duration-300;
     }
 
-    .transform-fade-down-enter, .transform-fade-down-leave-to {
+    .transform-fade-down-enter,
+    .transform-fade-down-leave-to {
       @apply opacity-0 transform -translate-y-2;
     }
   }
@@ -119,36 +119,41 @@
   --item-width: 90px;
 
   width: 100%;
-  min-width: calc((var(--item-width) * var(--quantity) + (var(--quantity) * 8px)));
+  min-width: calc(
+    (var(--item-width) * var(--quantity) + (var(--quantity) * 8px))
+  );
   overflow: hidden;
   height: 90px;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
 
-  ul{
+  ul {
     display: flex;
     width: 100%;
     position: relative;
 
-    li{
+    li {
       position: absolute;
       width: var(--item-width);
       left: 100%;
       animation: autoRun var(--time) linear infinite;
       transition: filter 0.5s;
-      animation-delay: calc( (var(--time) / var(--quantity)) * (var(--position) - 1) - var(--time))!important;
+      animation-delay: calc(
+        (var(--time) / var(--quantity)) * (var(--position) - 1) - var(--time)
+      ) !important;
     }
   }
 }
 
 @keyframes autoRun {
-    from{
-        left: 100%;
-    }to{
-        left: calc(var(--item-width) * -1);
-    }
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--item-width) * -1);
+  }
 }
 
-.section{
+.section {
   @apply relative min-h-screen pt-[24px] w-full px-12 md:px-16 lg:px-24 lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
 }
 .section-title {
@@ -174,21 +179,21 @@ input {
   background-color: rgba(245, 243, 243, 0.753) !important;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-.checkbox-service{
+.checkbox-service {
   border-radius: 5px;
-  border: hsl(var(--primary)) 0.5px solid;
+  border: #898888 0.5px solid;
   position: relative;
   padding: 2px 6px;
   font-size: 14px;
   color: #898888;
   transition: all ease 0.5s;
 
-  input[type="checkbox"]{
+  input[type="checkbox"] {
     appearance: none;
     cursor: pointer;
     position: absolute;
@@ -199,23 +204,70 @@ input {
     background-color: transparent !important;
   }
 
-  &:has(input:checked){
-    background-color: hsl(196deg 100% 58.82% / 42%) !important;
-    color: #4e4e4e;
+  &:has(input:checked) {
+    background-color: black !important;
+    color: hsl(var(--primary));
+    border: none;
   }
 }
 
 #about {
   min-height: unset !important;
- 
-  .section-content{
-  min-height: unset;
- }
+
+  .section-content {
+    min-height: unset;
+  }
 }
 
 #cases {
   background-color: #000;
-  .section-title{
+  .section-title {
     color: white;
+  }
+}
+
+#contact-form {
+  @apply w-full flex flex-col gap-4 bg-white rounded-xl p-6;
+
+  div {
+    label:not(:has(input[type="checkbox"])) {
+      @apply block text-sm font-medium relative pb-2;
+
+      p {
+        position: absolute;
+        bottom: -14px;
+        right: 0px;
+        font-size: 12;
+        font-weight: 300;
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+
+  div:has(label input:invalid, label textarea:invalid):has(
+      label input:placeholder-shown,
+      label textarea:placeholder-shown
+    )
+    ~ div {
+    & button {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  div {
+    label:has(input:invalid, textarea:invalid):has(
+        input:not(:placeholder-shown),
+        textarea:not(:placeholder-shown)
+      ) {
+      --ring: 0, 81%, 59%, 0.712;
+      
+      p {
+        display: block;
+        opacity: 1;
+        color: hsla(0, 97%, 54%, 0.993);
+      }
+    }
   }
 }

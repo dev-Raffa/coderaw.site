@@ -23,7 +23,7 @@ export const BackToTopButton = () => {
       <button
         onClick={scrollToTop}
         title="Voltar ao topo"
-        className="fixed bottom-6 right-6 bg-black text-white p-4 rounded-full shadow-lg hover:bg-gray-950 transition-opacity duration-300 z-50"
+        className="fixed bottom-6 right-6 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-gray-950 transition-opacity duration-300 z-50"
       >
         ↑
       </button>

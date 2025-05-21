@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export default function Cases() {
   return (
-    <section id="cases" className="section" data-aos="fade-right">
+    <section id="cases" className="section">
       <h2 className="section-title">Cases de Sucesso</h2>
       <p className="section-subtitle">
         Conheça alguns dos projetos que desenvolvemos e os resultados que

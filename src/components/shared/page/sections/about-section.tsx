@@ -2,7 +2,7 @@ import { ReasonsList } from "@/components/lists/reasons/reasons-list";
 
 export default function About() {
   return (
-    <section id="about" className="section" data-aos="fade-right">
+    <section id="about" className="section">
       <h2 className="section-title">Por que escolher a Coderaw?</h2>
       <p className="section-subtitle">
         Somos uma empresa de consultoria em tecnologia comprometida em fornecer

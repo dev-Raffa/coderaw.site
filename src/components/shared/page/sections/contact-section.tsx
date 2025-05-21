@@ -1,13 +1,20 @@
+"use client";
+
 import { serviceList } from "@/components/lists/services/services-list";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { FormEvent } from "react";
 
 export default function Cta() {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
-    <section className="section" id="contact" data-aos="fade-up">
+    <section className="section" id="contact">
       <div className="section-content relative justify-center">
         <DotPattern
           width={20}
@@ -29,57 +36,71 @@ export default function Cta() {
           </p>
 
           <section className="bg-coderaw-bg pt-[24px] min-w-[300px] w-[90%] text-coderaw-text ">
-            <form className="w-full flex flex-col gap-8 bg-white rounded-xl p-6">
+            <form onSubmit={handleSubmit} id="contact-form">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-sm font-medium mb-1">
-                    Nome
-                    <Input placeholder="Seu nome" />
-                  </label>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">
-                    Email
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="seu@email.com"
-                    />
-                  </label>
-                </div>
+                <label className="">
+                  Nome
+                  <Input
+                    placeholder="Seu nome"
+                    required
+                    type="text"
+                    minLength={3}
+                  />
+                  <p>
+                    insira no mínimo 3 caractéres
+                  </p>
+                </label>
+                <label className="">
+                  Email
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                    required
+                    minLength={5}
+                  />
+                  <p>o email deve seguir o formato email@domain.com</p>
+                </label>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="">
                   Empresa
                   <Input id="company" placeholder="Nome da sua empresa" />
                 </label>
               </div>
               <div className="flex flex-wrap gap-2">
-                {serviceList.map((service)=>{
-                  return(
-                    <label className="checkbox-service" key={`form-checkbox-${service.title}`}>
+                {serviceList.map((service) => {
+                  return (
+                    <label
+                      className="checkbox-service"
+                      key={`form-checkbox-${service.title}`}
+                    >
                       {service.label}
                       <input type="checkbox" name={service.label} />
                     </label>
-                  )
+                  );
                 })}
               </div>
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-1"
-                >
+                <label className="">
                   Mensagem
+                  <Textarea
+                    placeholder="Como podemos ajudar?"
+                    required
+                    minLength={10}
+                    rows={8}
+                    className="text-area"
+                  />
+                  <p>
+                    a mensagem deve conter pelo menos 10 caractéres
+                  </p>
                 </label>
-                <Textarea
-                  id="message"
-                  placeholder="Como podemos ajudar?"
-                  rows={8}
-                  className="text-area"
-                />
               </div>
               <div className="flex items-center justify-end">
-                <Button className="font-title">Enviar Mensagem</Button>
+                <Button type="submit" className="font-title form-button-submit">
+                  Enviar Mensagem
+                </Button>
               </div>
             </form>
           </section>

@@ -11,10 +11,7 @@ import { Logo } from "../../icons/logo";
 
 export function Footer() {
   return (
-    <footer
-      data-aos="fade-down"
-      className="w-full space-y-16 py-12 px-12 md:px-16 lg:px-24 bg-black"
-    >
+    <footer className="w-full space-y-16 py-12 px-12 md:px-16 lg:px-24 bg-black">
       <section className="flex flex-col space-y-12 md:flex-row md:justify-between  md:space-y-0">
         <ul className="list-inside space-y-4">
           <span className="font-medium text-muted-foreground font-title">
