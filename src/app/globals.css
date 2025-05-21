@@ -166,51 +166,6 @@
   @apply relative w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
 }
 
-.text-area {
-  border: none;
-  outline: none;
-  background-color: rgba(245, 243, 243, 0.753);
-  border-radius: 5px;
-  -webkit-user-drag: none;
-}
-
-input {
-  outline: none;
-  background-color: rgba(245, 243, 243, 0.753) !important;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  &:focus {
-    outline: none;
-  }
-}
-
-.checkbox-service {
-  border-radius: 5px;
-  border: #898888 0.5px solid;
-  position: relative;
-  padding: 2px 6px;
-  font-size: 14px;
-  color: #898888;
-  transition: all ease 0.5s;
-
-  input[type="checkbox"] {
-    appearance: none;
-    cursor: pointer;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: transparent !important;
-  }
-
-  &:has(input:checked) {
-    background-color: black !important;
-    color: hsl(var(--primary));
-    border: none;
-  }
-}
-
 #about {
   min-height: unset !important;
 
@@ -220,7 +175,8 @@ input {
 }
 
 #cases {
-  background-color: #000;
+  @apply bg-gradient-to-tr from-zinc-900 to-black;
+  
   .section-title {
     color: white;
   }
@@ -231,8 +187,25 @@ input {
 
   div {
     label:not(:has(input[type="checkbox"])) {
-      @apply block text-sm font-medium relative pb-2;
+      @apply block flex flex-col gap-1 text-sm font-medium relative pb-2;
 
+      textarea {
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        -webkit-user-drag: none;
+      }
+      
+      input {
+        outline: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-color: #898888 !important;
+        &:focus {
+          outline: none;
+        }
+      }
+      
       p {
         position: absolute;
         bottom: -14px;
@@ -243,6 +216,33 @@ input {
         opacity: 0;
       }
     }
+
+    label:has(input[type="checkbox"]){
+      border-radius: 5px;
+      border: #898888 0.5px solid;
+      position: relative;
+      padding: 2px 6px;
+      font-size: 14px;
+      color: #898888;
+      transition: all ease 0.5s;
+    
+      input{
+        appearance: none;
+        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent !important;
+      }
+    
+      &:has(input:checked) {
+        background-color: black !important;
+        color: hsl(var(--primary));
+        border: none;
+      }
+    }
   }
 
   div:has(label input:invalid, label textarea:invalid):has(
@@ -251,6 +251,7 @@ input {
     )
     ~ div {
     & button {
+      background-color: rgb(185 185 185 / 94%);
       pointer-events: none;
       opacity: 0.5;
     }
