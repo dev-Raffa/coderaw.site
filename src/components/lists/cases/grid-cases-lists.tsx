@@ -9,7 +9,7 @@ export function CasesList() {
         <li key={`case-${study.name}`}>
           <article>
             <figure>
-              <Image src={study.image} alt=""></Image>
+              <Image src={study.image} fill alt=""></Image>
             </figure>
             <section>
               <h3>{study.name}</h3>

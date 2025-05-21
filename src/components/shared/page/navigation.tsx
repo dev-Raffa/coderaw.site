@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Logo } from "../icons/logo";
 import { subRouters } from "@/components/lists/sub-routers/sub-routers";
@@ -5,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
   return (
-    <nav className="sticky rounded-lg backdrop-blur-xl max-w-6xl w-full flex items-center justify-between h-[68px] p-4">
+    <nav className="header-bg backdrop-blur-xl max-w-6xl w-full flex items-center justify-between h-[68px] p-4">
       <ul>
         <Link className="h-[56px] flex items-center rounded-[0.3rem]" href="/">
           <Logo className="w-1/2 h-auto object-cover" />

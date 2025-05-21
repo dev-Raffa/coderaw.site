@@ -1,6 +1,8 @@
 import "./globals.css";
 
-import { AOSInit } from "@/components/shared/aos-init";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import type { Metadata } from "next";
 import {
   Michroma,
@@ -11,7 +13,7 @@ import { Toaster } from "sonner";
 import { Footer } from "@/components/shared/page/layout/footer";
 import { TopGradient } from "@/components/shared/top-gradient";
 import { Header } from "@/components/shared/page/layout/header";
-import { BackToTopButton } from "@/components/shared/buttons/backToTop.component";
+import { AOSInit } from "@/components/shared/aos-init";
 
 const michroma = Michroma({
   weight: ["400"],
@@ -19,17 +21,14 @@ const michroma = Michroma({
   variable: "--font-michroma",
 });
 
-const montserrat = Montserrat({
-  weight: ["400", "500","600", "700"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
 });
+
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export const metadata: Metadata = {
   title: "Consultoria em Software | coderaw.io",
@@ -48,7 +47,7 @@ export default function RootLayout({
       >
         <AOSInit />
         <TopGradient />
-        <BackToTopButton />
+        { /*<BackToTopButton /> */}
         <Header />
         <main className="min-h-screen sm:pb-[64px]">
           {children}

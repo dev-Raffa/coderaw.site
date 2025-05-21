@@ -77,7 +77,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    max-width: 100dvw;
 
     .transform-fade-down-enter-active,
     .transform-fade-down-leave-active {
@@ -118,7 +119,8 @@
   --time: 40s;
   --item-width: 90px;
 
-  width: 100%;
+  width: 100dvw;
+  overflow-x: hidden;
   min-width: calc(
     (var(--item-width) * var(--quantity) + (var(--quantity) * 8px))
   );
@@ -271,4 +273,9 @@
       }
     }
   }
+}
+
+.header-bg{
+  background: #FFFFFF38;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.22) 3%, rgba(255, 255, 255, 0.22) 98.5%, rgba(237, 221, 83, 0) 100%);
 }

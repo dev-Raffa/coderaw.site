@@ -38,7 +38,7 @@ export default function Cta() {
           <section className="bg-coderaw-bg pt-[24px] min-w-[300px] w-[90%] text-coderaw-text ">
             <form onSubmit={handleSubmit} id="contact-form">
               <div className="grid gap-4 sm:grid-cols-2">
-                <label className="">
+                <label>
                   Nome
                   <Input
                     placeholder="Seu nome"
@@ -50,7 +50,7 @@ export default function Cta() {
                     insira no mínimo 3 caractéres
                   </p>
                 </label>
-                <label className="">
+                <label>
                   Email
                   <Input
                     id="email"
@@ -64,7 +64,7 @@ export default function Cta() {
                 </label>
               </div>
               <div>
-                <label className="">
+                <label>
                   Empresa
                   <Input id="company" placeholder="Nome da sua empresa" />
                 </label>
@@ -83,7 +83,7 @@ export default function Cta() {
                 })}
               </div>
               <div>
-                <label className="">
+                <label>
                   Mensagem
                   <Textarea
                     placeholder="Como podemos ajudar?"

@@ -1,46 +1,45 @@
 "use client";
 
-import "./services.css"; // use seu CSS adaptado para React
+import "./services.css";
 import Image from "next/image";
 import { serviceList } from "./services-list";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { cn } from "@/lib/utils";
-//import {useGSAP } from "@gsap/react"
-//import gsap from "gsap";
-//import { useRef } from "react";
-//import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-//gsap.registerPlugin(useGSAP)
-//gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 export const ServiceLists = () => {
-  //const serviceListRef = useRef<HTMLDivElement>(null);
   const highlightedServices = serviceList.filter(
     (service) => service.highlight === true
   );
 
-  /*
-  useGSAP(()=>{
-    
-    const cards = gsap.utils.toArray<HTMLDivElement>(".card-service")
+  useGSAP(() => {
+    const restCards = gsap.utils
+      .toArray<HTMLDivElement>(".card-service")
+      .slice(1);
 
-    cards.forEach((card, index)=>{
-      index === 0 ? (
-        gsap.to(card, {
-          scrollTrigger:{
-            trigger: ".sevice-list",
-            start: "top 100px",
-            end: "center center"
-          },
-          opacity: 1,
-          scale: 1,
-        })
-      ):(
-        console.log(card)
-      )
+    restCards.forEach((card, index) => {
+      const article = card.querySelector(".card-service-text");
+      const image = card.querySelector(".card-service-image");
 
-    })
-  }, {})
-*/
+      gsap.to(article, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top top",
+          end: "middle",
+          markers: true,
+          scrub: true,
+        },
+        opacity: 1,
+        scale: 1,
+        backgroundColor: "white"
+      });
+
+      gsap.to(image, {});
+    });
+  }, {});
 
   return (
     <ul id="service-list" className="service-list">
