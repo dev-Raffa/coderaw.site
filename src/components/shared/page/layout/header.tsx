@@ -8,19 +8,16 @@ import { Navigation } from "../navigation";
 export function Header() {
   return (
     <>
-      <header className="hidden h-[100px] sticky top-[0] sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-start md:flex-nowrap z-50 w-full text-sm">
+      <header className="hidden h-[100px] sticky top-[0] sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm">
         <Navigation />
       </header>
 
       <header className="h-16 flex justify-between items-center p-4 gap-3 sm:hidden">
         <div>
-          <Link className="h-12 flex items-center rounded-[0.3rem]" href="/">
+          <Link className="h-[100px] w-[220px] relative flex items-center rounded-[0.3rem]" href="/">
             <Logo className="w-3/4 h-auto object-cover" />
           </Link>
         </div>
-
-        <ThemeToggle className="w-16 h-8" />
-        <MobileMenu />
       </header>
     </>
   );

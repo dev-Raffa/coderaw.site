@@ -8,17 +8,20 @@ import {
   Michroma,
   Montserrat,
   Poppins,
+  Tomorrow
 } from "next/font/google";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/shared/page/layout/footer";
 import { TopGradient } from "@/components/shared/top-gradient";
 import { Header } from "@/components/shared/page/layout/header";
 import { AOSInit } from "@/components/shared/aos-init";
+import GridPattern from "@/components/magic-ui/grid-pattern";
+import { cn } from "@/lib/utils";
 
 const michroma = Michroma({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-michroma",
+  variable: "--font-title",
 });
 
 const poppins = Poppins({
@@ -43,15 +46,23 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${michroma.variable}  ${poppins.className} antialiased`}
+        className={`${michroma.variable} relative ${poppins.className} antialiased`}
       >
+        <GridPattern
+          width={40}
+          height={40}
+          x={-1}
+          y={-1}
+          className={cn(
+            "absolute inset-0 [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+          )}
+        />
+
         <AOSInit />
         <TopGradient />
-        { /*<BackToTopButton /> */}
+        {/*<BackToTopButton /> */}
         <Header />
-        <main className="min-h-screen sm:pb-[64px]">
-          {children}
-        </main>
+        <main className="min-h-screen sm:pb-[64px]">{children}</main>
         <Toaster richColors />
         <Footer />
       </body>

@@ -12,8 +12,7 @@ export function Logo({ className, color = "black" }: LogoProps) {
     <Image
       src={color === "black" ? logoBlack : logoWhite}
       alt="Logo"
-      width={600}
-      height={300}
+      fill
       className={className}
     />
   )

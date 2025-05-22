@@ -26,7 +26,7 @@ export default function Cta() {
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
           )}
         />
-        <article className="flex flex-col items-center">
+        <article className="flex flex-col items-center gap-2">
           <h2 className="section-title">
             Pronto para transformar o seu negócio?
           </h2>
@@ -46,9 +46,7 @@ export default function Cta() {
                     type="text"
                     minLength={3}
                   />
-                  <p>
-                    insira no mínimo 3 caractéres
-                  </p>
+                  <p>insira no mínimo 3 caractéres</p>
                 </label>
                 <label>
                   Email
@@ -72,6 +70,7 @@ export default function Cta() {
               <div className="flex flex-wrap gap-2">
                 {serviceList.map((service) => {
                   return (
+                    service.label.length > 0 &&
                     <label
                       className="checkbox-service"
                       key={`form-checkbox-${service.title}`}
@@ -92,9 +91,7 @@ export default function Cta() {
                     rows={8}
                     className="text-area"
                   />
-                  <p>
-                    a mensagem deve conter pelo menos 10 caractéres
-                  </p>
+                  <p>a mensagem deve conter pelo menos 10 caractéres</p>
                 </label>
               </div>
               <div className="flex items-center justify-end">

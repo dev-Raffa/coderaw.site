@@ -27,17 +27,23 @@ export const ServiceLists = () => {
       gsap.to(article, {
         scrollTrigger: {
           trigger: card,
-          start: "top top",
-          end: "middle",
-          markers: true,
+          start: "bottom top",
           scrub: true,
         },
         opacity: 1,
         scale: 1,
-        backgroundColor: "white"
+        backgroundColor: "white",
       });
 
-      gsap.to(image, {});
+      gsap.to(image, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top top",
+          scrub: true,
+        },
+        scale: 1,
+        translateX: 0,
+      });
     });
   }, {});
 
@@ -49,31 +55,34 @@ export const ServiceLists = () => {
             <article className="card-service-text">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+              <DotPattern
+                width={10}
+                height={10}
+                cx={1}
+                cy={1}
+                cr={1}
+                className={cn(
+                  "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
+                    " h-[100px]"
+                )}
+              />
             </article>
             <figure
               className="card-service-image"
               /*@ts-expect-error */
               style={{ "--card-number": index }}
             >
-              <Image
-                src={service.imageUrl}
-                alt={service.title}
-                fill
-                loading="lazy"
-                className="object-cover"
-              ></Image>
+              {
+                service.imageUrl &&
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                ></Image>
+              }
             </figure>
-            <DotPattern
-              width={10}
-              height={10}
-              cx={1}
-              cy={1}
-              cr={1}
-              className={cn(
-                "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
-                  " h-[200px]"
-              )}
-            />
           </li>
         );
       })}

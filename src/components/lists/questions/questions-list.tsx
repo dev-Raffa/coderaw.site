@@ -12,11 +12,11 @@ export const QuestionsList = ()=>{
                   <span className="sm:hidden font-title text-start">
                     {question.mobile_label}
                   </span>
-                  <span className="hidden font-title sm:flex">
+                  <span className="hidden font-title sm:flex text-start">
                     {question.desktop_label}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-start">
+                <AccordionContent className="text-start text-base">
                   {question.content}
                 </AccordionContent>
               </AccordionItem>

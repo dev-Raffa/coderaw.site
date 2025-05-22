@@ -10,7 +10,7 @@ export const ReasonsList = ()=>{
               <h3 className="font-bold mb-1 font-title ">
                 {reason.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground sm:text-base">
                 {reason.description}
               </p>
             </article>

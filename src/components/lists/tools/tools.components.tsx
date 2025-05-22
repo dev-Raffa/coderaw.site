@@ -1,9 +1,9 @@
 export const ToolsListSlide = ()=>{
     return (
-      <div id="tools-list-slide" className="mt-12 flex relative z-10 w-fit h-fit sm:mx-auto sm:px-0 -mx-6 px-6 overflow-x-auto">        
+      <div id="tools-list-slide" className="mt-12 flex relative z-10 w-fit h-fit sm:mx-auto sm:px-0 -mx-6 px-6 overflow-x-hidden">        
           <ul>
             <li  
-              className="border flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+              className="flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
               //@ts-expect-error --position
               style={{"--position": "1"}}
               >
@@ -22,7 +22,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "2"}}
             >
@@ -35,7 +35,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "3"}}
                 >
@@ -50,7 +50,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "4"}}
                 >
@@ -94,7 +94,7 @@ export const ToolsListSlide = ()=>{
             </li>
             
             <li 
-                className="border flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-12 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "5"}}
                 >
@@ -107,7 +107,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-            className="border flex relative *:relative *:size-9 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+            className=" flex relative *:relative *:size-9 *:m-auto size-20 mx-auto rounded-[0.3rem]"
             //@ts-expect-error --position
             style={{"--position": "6"}}
             >
@@ -155,7 +155,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-            className="border flex relative *:relative *:size-9 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+            className=" flex relative *:relative *:size-9 *:m-auto size-20 mx-auto rounded-[0.3rem]"
             //@ts-expect-error --position
             style={{"--position": "7"}}
             >
@@ -173,7 +173,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "8"}}
                 >
@@ -224,7 +224,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "9"}}
                 >
@@ -317,7 +317,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "10"}}
                 >
@@ -330,7 +330,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li  
-                className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+                className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
                 //@ts-expect-error --position
                 style={{"--position": "11"}}
                 >
@@ -343,7 +343,7 @@ export const ToolsListSlide = ()=>{
             </li>
 
             <li 
-              className="border flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
+              className=" flex relative *:relative *:size-16 *:m-auto size-20 mx-auto rounded-[0.3rem]"
               //@ts-expect-error --position
               style={{"--position": "12"}}
               >

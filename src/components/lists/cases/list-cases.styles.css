@@ -10,7 +10,7 @@
     border-radius: 20px;
     background-color: transparent;
     
-    li{
+    .case-card{
         position: sticky;
         position: -webkit-sticky;
         top: 120px;
@@ -20,21 +20,35 @@
         display: flex;
         align-items: center;
         justify-content: center;
-       
+        height: 85dvh;
+        max-height: 520px;   
 
         article{
+            position: relative;
             display: flex;
             flex-wrap: wrap-reverse;
-            width: 80%;
+            width: 100%;
             height: 100%;
-            color: black;
-            background-color: white;
+            color: white;
             border-radius: 20px;
-            padding: 30px 8px;
+            overflow: hidden;
+            padding: 0px 8px 0px 0px;
             gap: 24px;
-            border: 1.5px solid lightblue;
-            box-shadow: 0 0 3px 1px #013343;
+            box-shadow: 0 0 3px 1px #0000002d;
             min-width: 320px;
+
+            &::before{
+                content: "";
+                position:absolute;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(24px);
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: 15px;
+                background-color: rgba(255, 255, 255, 0.08);
+            }
 
             figure{
                 position: relative;
@@ -51,18 +65,28 @@
                 width: calc(60% - 24px);
                 
                 h3{
+                    width: 100%;
                     font-size: var(--font-title);
-                    margin-bottom: 12px;
-                    text-align: initial;
+                    margin-bottom: 8px;
+                    text-align: center;
                     font-weight: 500;
                 }
 
-                p {
-                    font-size: var(--font-text);
-                    margin-bottom: 12px;
-                    text-align: initial;
-                    font-weight: 400;
-                    color: hsl(var(--muted-foreground));
+                ul{
+                    gap: 12px;
+
+                    li{
+                        h4{
+                            font-size: 16px;
+                        }
+
+                        p{
+
+                            font-size: 15px;
+                            font-weight: 300;
+                            color: rgb(223, 221, 221);
+                        }
+                    }
                 }
             }
         }

@@ -10,7 +10,7 @@ type service = {
   title: string;
   label:string;
   description: string;
-  imageUrl: StaticImageData;
+  imageUrl?: StaticImageData;
   highlight: boolean 
 };
 
@@ -78,5 +78,13 @@ export const serviceList: service[] = [
       "Garantimos o bom funcionamento dos sistemas com suporte técnico contínuo, correção de falhas e implementação de melhorias. Nosso foco é manter seu software atualizado, estável e preparado para as necessidades futuras do seu negócio.",
     imageUrl: placeholderImage,
     highlight: false,
+  },
+  {
+    title: "",
+    label: "",
+    description:
+      "",
+    imageUrl: undefined,
+    highlight: true,
   },
 ];

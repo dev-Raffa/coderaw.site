@@ -10,6 +10,10 @@
 
 @layer base {
   :root {
+    --section-title-size: 24px;
+    --section-subtitle-size: 18px;
+    --card-title-size: 20px;
+    --card-text-size: 16px;
     --background: 0, 0%, 99.61%;
     --foreground: 120, 100%, 0.39%;
     --card: 0, 0%, 99.61%;
@@ -37,32 +41,6 @@
     --chart-5: 27 87% 67%;
   }
 
-  .dark {
-    --background: 120, 100%, 0.39%;
-    --foreground: 0, 0%, 99.61%;
-    --card: 120, 100%, 0.39%;
-    --card-foreground: 0, 0%, 99.61%;
-    --popover: 120, 100%, 0.39%;
-    --popover-foreground: 0, 0%, 99.61%;
-    --primary: 196, 100%, 58.82%;
-    --primary-foreground: 196, 100%, 58.82%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0, 0%, 99.61%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0, 0%, 99.61%;
-    --destructive: 0, 100%, 46.27%;
-    --destructive-foreground: 0, 0%, 99.61%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
@@ -72,13 +50,12 @@
     [&::-webkit-scrollbar-track]:bg-background
     [&::-webkit-scrollbar-thumb]:rounded-[0.3rem]
     [&::-webkit-scrollbar-thumb]:bg-black
-    dark:[&::-webkit-scrollbar-track]:bg-background
-    dark:[&::-webkit-scrollbar-thumb]:bg-primary;
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
-    max-width: 100dvw;
+    @apply flex flex-col bg-background text-foreground overflow-x-hidden;
+    align-items: center;
+    justify-content: center;
 
     .transform-fade-down-enter-active,
     .transform-fade-down-leave-active {
@@ -90,6 +67,7 @@
       @apply opacity-0 transform -translate-y-2;
     }
   }
+
 }
 
 @layer utilities {
@@ -118,25 +96,25 @@
   --quantity: 12;
   --time: 40s;
   --item-width: 90px;
-
-  width: 100dvw;
+  
+  width: 100vw;
   overflow-x: hidden;
-  min-width: calc(
-    (var(--item-width) * var(--quantity) + (var(--quantity) * 8px))
-  );
+
   overflow: hidden;
   height: 90px;
-  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10% 95%, transparent);
 
   ul {
     display: flex;
-    width: 100%;
+    width: 100vw;
     position: relative;
+    overflow: hidden;
 
     li {
+      --left: calc(var(--item-width) * var(--quantity) + 8px);
       position: absolute;
       width: var(--item-width);
-      left: 100%;
+      left: var(--left);
       animation: autoRun var(--time) linear infinite;
       transition: filter 0.5s;
       animation-delay: calc(
@@ -148,7 +126,7 @@
 
 @keyframes autoRun {
   from {
-    left: 100%;
+    left: var(--left);
   }
   to {
     left: calc(var(--item-width) * -1);
@@ -156,16 +134,16 @@
 }
 
 .section {
-  @apply relative min-h-screen pt-[24px] w-full px-12 md:px-16 lg:px-24 lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
+  @apply relative min-h-screen pt-[24px] w-[100dvw] px-12 md:px-16 lg:px-24 lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
 }
 .section-title {
   @apply text-3xl font-title font-bold text-black text-center w-[80%] min-w-[300px];
 }
 .section-subtitle {
-  @apply text-xl font-medium text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium;
+  @apply text-xl font-medium text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium sm:text-xl;
 }
 .section-content {
-  @apply relative w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
+  @apply relative max-w-6xl w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
 }
 
 #about {
@@ -183,6 +161,7 @@
     color: white;
   }
 }
+
 
 #contact-form {
   @apply w-full flex flex-col gap-4 bg-white rounded-xl p-6;
@@ -276,6 +255,5 @@
 }
 
 .header-bg{
-  background: #FFFFFF38;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.22) 3%, rgba(255, 255, 255, 0.22) 98.5%, rgba(237, 221, 83, 0) 100%);
+  background: rgba(255, 255, 255, 0.22);
 }

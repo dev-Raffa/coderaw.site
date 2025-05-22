@@ -89,9 +89,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        title: ["var(--font-michroma)"],
+        title: ["var(--font-title)"],
         text: ["var(--font-montserrat)"],
-        item: ["var(--font-michroma)"],
+        item: ["var(--font-title)"],
       },
     },
   },
