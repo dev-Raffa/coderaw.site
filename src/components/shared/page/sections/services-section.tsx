@@ -16,9 +16,6 @@ export const ServicesSection = () => {
         </p>
       </div>
       <div className="section-content justify-center">
-        <div className="absolute inset-0 -z-10 justify-self-center self-center">
-          <HeroPattern />
-        </div>
         <ServiceLists />
         <IntegrationsSection />
       </div>

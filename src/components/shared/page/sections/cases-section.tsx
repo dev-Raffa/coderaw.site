@@ -4,8 +4,11 @@ import { cn } from "@/lib/utils";
 
 export default function Cases() {
   return (
-    <section id="cases" className="section">
-      <div className="max-w-6xl flex flex-col items-center gap-2">
+    <section
+      id="cases"
+      className="section bg-gradient-to-tr from-zinc-900 to-black"
+    >
+      <div className="flex flex-col items-center gap-2">
         <h2 className="section-title">Cases de Sucesso</h2>
         <p className="section-subtitle">
           Conheça alguns dos projetos que desenvolvemos e os resultados que
