@@ -1,11 +1,10 @@
 import { ServiceLists } from "@/components/lists/services/service-lists";
-import { HeroPattern } from "../../hero-pattern";
 import { IntegrationsSection } from "../integrations-section";
 
 export const ServicesSection = () => {
   return (
     <section className="section" id="services">
-      <div className="max-w-6xl flex flex-col items-center gap-2">
+      <div className="section-texts">
         <h2 className="section-title">
           Serviços sob-medida para transformar seu negócio
         </h2>
@@ -16,8 +15,7 @@ export const ServicesSection = () => {
         </p>
       </div>
       <div className="section-content justify-center">
-        <ServiceLists />
-        <IntegrationsSection />
+        
       </div>
     </section>
   );

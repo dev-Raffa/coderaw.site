@@ -8,7 +8,7 @@ import { Navigation } from "../navigation";
 export function Header() {
   return (
     <>
-      <header className="hidden h-[100px] sticky top-[0] sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm">
+      <header className="hidden h-[100px] fixed top-[0] flex items-center sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm">
         <Navigation />
       </header>
 

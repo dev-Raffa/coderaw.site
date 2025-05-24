@@ -3,7 +3,7 @@ import { ReasonsList } from "@/components/lists/reasons/reasons-list";
 export default function About() {
   return (
     <section id="about" className="section">
-      <div className="max-w-6xl flex flex-col items-center gap-2">
+      <div className="section-texts">
         <h2 className="section-title">Por que escolher a Coderaw?</h2>
         <p className="section-subtitle">
           Somos uma empresa de consultoria em tecnologia comprometida em

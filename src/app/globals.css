@@ -98,19 +98,20 @@
   --time: 40s;
   --item-width: 90px;
   
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 
   height: 90px;
-  mask-image: linear-gradient(to right, transparent, #000 10% 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
 
   ul {
     display: flex;
     width: 100vw;
     position: relative;
+    min-width: calc(var(--width) * var(--quantity));
 
     li {
-      --left: calc(var(--item-width) * var(--quantity) + 8px);
+      --left: 100%;
       position: absolute;
       width: var(--item-width);
       left: var(--left);
@@ -133,17 +134,55 @@
 }
 
 .section {
-  @apply relative min-h-screen pt-[24px] w-full px-12 md:px-16 lg:px-24 lg:pt-[64px] flex flex-col items-center justify-center gap-[24px];
+  --px: 3rem;
+  --py: 1rem;
+  --gap: 24px;
+
+  padding: var(--py) var(--px);
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+
+  @media screen and (min-width: 768px) {
+    --px: 4rem;
+    --py: 1rem;
+  };
+
+  @media screen and (min-width: 1024px) {
+    --px: 6rem;
+    --py: 1rem;
+  };
+
 }
+
+.section-texts{
+  @apply w-[70%] min-w-[100px] pt-[100px] flex flex-col items-center gap-2;
+}
+
 .section-title {
-  @apply text-3xl font-title font-bold text-black text-center w-[80%] min-w-[300px];
+  @apply text-4xl font-title font-bold text-black text-center w-full;
 }
 .section-subtitle {
-  @apply text-xl font-medium text-muted-foreground text-center w-[80%] min-w-[300px] mx-auto font-medium sm:text-xl;
+  @apply text-2xl py-2 text-muted-foreground text-center w-full mx-auto font-medium ;
 }
+
 .section-content {
-  @apply relative max-w-6xl w-full min-h-[500px] flex flex-col items-center gap-16 py-8 px-4 md:px-8 lg:px-12 font-medium;
+  @apply relative max-w-6xl w-full min-h-[500px] flex flex-col items-center gap-16  p-4 md:px-8 font-medium;
 }
+
+.content-title {
+ @apply text-2xl;
+}
+
+.content-text {
+  @apply text-lg text-muted-foreground;
+}
+
 
 #about {
   min-height: unset !important;
@@ -160,20 +199,23 @@
 }
 
 #contact-form {
-  @apply w-full flex flex-col gap-4 bg-white rounded-xl p-6;
+  @apply w-full flex flex-col gap-4 bg-white rounded-xl;
 
   div {
     label:not(:has(input[type="checkbox"])) {
-      @apply block flex flex-col gap-1 text-sm font-medium relative pb-2;
+      @apply block flex flex-col gap-1 text-base font-medium relative pb-2;
 
       textarea {
+        font-size: 16px;
         border: none;
         outline: none;
         border-radius: 5px;
         -webkit-user-drag: none;
+        resize: none;
       }
       
       input {
+        font-size: 16px;
         outline: none;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -182,12 +224,20 @@
           outline: none;
         }
       }
+
+      input:not(:focus-visible), textarea:not(:focus-visible) {
+        transition: all ease 300ms;
+
+        &:hover{
+          outline: 2px solid hsl(var(--primary));
+        }
+      }
       
       p {
         position: absolute;
         bottom: -14px;
         right: 0px;
-        font-size: 12;
+        font-size: 16px;
         font-weight: 300;
         display: none;
         opacity: 0;
@@ -199,7 +249,7 @@
       border: #898888 0.5px solid;
       position: relative;
       padding: 2px 6px;
-      font-size: 14px;
+      font-size: 16px;
       color: #898888;
       transition: all ease 0.5s;
     
@@ -212,6 +262,13 @@
         top: 0;
         left: 0;
         background-color: transparent !important;
+
+      }
+      
+      &:not(:checked):hover{
+        background-color: black !important;
+        color: hsl(var(--primary));
+        border: none;  
       }
     
       &:has(input:checked) {

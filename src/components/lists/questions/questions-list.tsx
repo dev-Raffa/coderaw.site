@@ -9,14 +9,14 @@ export const QuestionsList = ()=>{
             <li key={index}>
               <AccordionItem value={`item-${index}`} className="w-full ">
                 <AccordionTrigger>
-                  <span className="sm:hidden font-title text-start">
+                  <span className="sm:hidden font-title content-title text-start">
                     {question.mobile_label}
                   </span>
-                  <span className="hidden font-title sm:flex text-start">
+                  <span className="hidden font-title content-title sm:flex text-start">
                     {question.desktop_label}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-start text-base">
+                <AccordionContent className="text-start content-text">
                   {question.content}
                 </AccordionContent>
               </AccordionItem>

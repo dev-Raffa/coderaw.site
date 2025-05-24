@@ -15,6 +15,15 @@ export default function Cta() {
 
   return (
     <section className="section" id="contact">
+      <div className="section-texts">
+        <h2 className="section-title">
+          Pronto para transformar o seu negócio?
+        </h2>
+        <p className="section-subtitle">
+          Entre em contato conosco hoje mesmo e descubra como podemos ajudar a
+          impulsionar sua empresa com soluções tecnológicas inovadoras.
+        </p>
+      </div>
       <div className="section-content relative justify-center">
         <DotPattern
           width={20}
@@ -26,16 +35,8 @@ export default function Cta() {
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
           )}
         />
-        <article className="flex flex-col items-center gap-2">
-          <h2 className="section-title">
-            Pronto para transformar o seu negócio?
-          </h2>
-          <p className="section-subtitle">
-            Entre em contato conosco hoje mesmo e descubra como podemos ajudar a
-            impulsionar sua empresa com soluções tecnológicas inovadoras.
-          </p>
-
-          <section className="bg-coderaw-bg pt-[24px] min-w-[300px] w-[90%] text-coderaw-text ">
+        <article>
+          <section className="bg-coderaw-bg min-w-[300px] w-[100%] text-coderaw-text ">
             <form onSubmit={handleSubmit} id="contact-form">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label>
@@ -70,14 +71,15 @@ export default function Cta() {
               <div className="flex flex-wrap gap-2">
                 {serviceList.map((service) => {
                   return (
-                    service.label.length > 0 &&
-                    <label
-                      className="checkbox-service"
-                      key={`form-checkbox-${service.title}`}
-                    >
-                      {service.label}
-                      <input type="checkbox" name={service.label} />
-                    </label>
+                    service.label.length > 0 && (
+                      <label
+                        className="checkbox-service"
+                        key={`form-checkbox-${service.title}`}
+                      >
+                        {service.label}
+                        <input type="checkbox" name={service.label} />
+                      </label>
+                    )
                   );
                 })}
               </div>
