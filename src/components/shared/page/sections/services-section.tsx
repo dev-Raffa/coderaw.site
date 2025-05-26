@@ -1,5 +1,6 @@
-import { ServiceLists } from "@/components/lists/services/service-lists";
+import { ServiceLists } from "@/components/lists/services/service-lists-antigo";
 import { IntegrationsSection } from "../integrations-section";
+import { ServiceList } from "@/components/lists/services/service-lists";
 
 export const ServicesSection = () => {
   return (
@@ -14,8 +15,8 @@ export const ServicesSection = () => {
           negócio.
         </p>
       </div>
-      <div className="section-content justify-center">
-        
+      <div className="section-content">
+        <ServiceList />
       </div>
     </section>
   );

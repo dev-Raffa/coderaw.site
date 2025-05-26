@@ -13,15 +13,23 @@
     .case-card{
         position: sticky;
         position: -webkit-sticky;
-        top: 120px;
-        padding-bottom: 50px;
+        top: 100px;
+        padding-bottom: 20px;
+        padding-top: 8px;
+        gap: 12px;
         width: 100%;
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 85dvh;
-        max-height: 520px;   
+        max-height: 620px;   
+
+        &:first-child{
+            article::before {
+                background-color: rgba(255, 255, 255, 0.18);
+            }
+        }
 
         article{
             position: relative;
@@ -32,7 +40,7 @@
             color: white;
             border-radius: 20px;
             overflow: hidden;
-            padding: 0px 8px 0px 0px;
+            padding: 0px 2px 0px 0px;
             gap: 24px;
             box-shadow: 0 0 3px 1px #0000002d;
             min-width: 320px;
@@ -47,12 +55,12 @@
                 left: 0;
                 z-index: -1;
                 border-radius: 15px;
-                background-color: rgba(255, 255, 255, 0.08);
+                background-color: rgba(255, 255, 255, 0.00);
             }
 
             figure{
                 position: relative;
-                min-height: 300px;
+                min-height: 350px;
                 border-radius: 15px;
                 min-width: 300px;
                 width: calc(40% - 24px);
@@ -63,6 +71,7 @@
                 display: flex;
                 flex-direction: column;
                 width: calc(60% - 24px);
+                padding-top: 8px;
                 
                 h3{
                     width: 100%;
@@ -98,7 +107,7 @@
             animation-range: entry 10%;
 
             article{
-                opacity: 0;
+                opacity: 1;
                 transform: scale(0.5);
                 animation: appear-scale linear forwards;
                 animation-timeline: view();
@@ -120,5 +129,11 @@
     to{
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes appear {
+    to{
+        opacity: 1;
     }
 }

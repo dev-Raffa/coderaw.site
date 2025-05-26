@@ -30,9 +30,9 @@ export const Navigation = () => {
             </Link>
           ))}
 
-          <Button className="bg-primary text-black font-item">
+          <Link href={"#contact"} className="bg-primary py-2 px-4 rounded-md text-black font-item">
             Fale com um especialista
-          </Button>
+          </Link>
         </div>
       </ul>
     </nav>

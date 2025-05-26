@@ -3,7 +3,7 @@ import placeholderImage from "../../../../public/placeholder.svg"
 
 type TCase = {
   name: string;
-  desfio?: string;
+  desafio?: string;
   solucao?: string;
   resultado?: string;
   description?: string;
@@ -14,7 +14,7 @@ type TCase = {
 export const cases: TCase[] = [
   {
     name: "SmartConsig",
-    desfio:
+    desafio:
       "A SmartConsig, especialista em soluções de crédito consignado, que há 5 anos atua com segurança e qualidade, nos procurou buscando automatizar a verificação de margem de crédito de seus clientes — um processo antes manual, descentralizado e com baixa integração entre canais.",
     solucao:
       "A equipe da Coderaw desenvolveu uma plataforma própria, sob medida, que permite aos clientes da SmartConsig simular a margem de crédito e iniciar o atendimento direto via WhatsApp. Criamos um sistema inteligente de roteamento, que define automaticamente qual operador deve atender cada cliente com base em carga de atendimentos.",
@@ -25,21 +25,27 @@ export const cases: TCase[] = [
   },
   {
     name: "BeeConversa",
-    description: "Desenvolvimento de middleware personalizado com APIs RESTful",
+    desafio:
+      "O BeeConversa é a solução da Coderaw que potencializa o uso da API oficial do WhatsApp para empresas que desejam escalar sua comunicação com inteligência e eficiência.",
+    solucao:
+      "Com o BeeConversa, é possível realizar envio de mensagens em massa e acompanhar métricas detalhadas das campanhas: estados com maior taxa de retorno, regiões com menor engajamento, horários mais efetivos — tudo para ajudar o cliente a tomar decisões baseadas em dados.",
+    resultado: "",
     image: placeholderImage,
     testemonial: "",
   },
   {
     name: "Spend Management",
-    description:
-      "Plataforma em nuvem com criptografia avançada e conformidade com LGPD",
+    desafio: "",
+    solucao: "",
+    resultado: "",
     image: placeholderImage,
     testemonial: "",
   },
   {
     name: "CondoTec",
-    description:
-      "Plataforma em nuvem com criptografia avançada e conformidade com LGPD",
+    desafio: "",
+    solucao: "",
+    resultado: "",
     image: placeholderImage,
     testemonial: "",
   },

@@ -45,7 +45,7 @@
     gap: 12px;
     position: -webkit-sticky;
     top: 120px;
-    height: var(--wrap-height);
+    height: auto;
     flex-wrap: wrap;
     justify-content: var(--card-justify);
     align-items: var(--card-align);
@@ -94,7 +94,7 @@
       figure {
         height: calc(var(--figure-height) - (var(--card-number) * 2px));
         top: calc((var(--card-number) * 2px));
-        transform: scale(0.7) translateX(300%);
+        transform: scale(0.7) translateX(200%) ;
       }
     }
 

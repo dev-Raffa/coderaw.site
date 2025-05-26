@@ -1,6 +1,6 @@
 "use client";
 
-import { serviceList } from "@/components/lists/services/services-list";
+import { serviceList } from "@/components/lists/services/services";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,16 +25,6 @@ export default function Cta() {
         </p>
       </div>
       <div className="section-content relative justify-center">
-        <DotPattern
-          width={20}
-          height={20}
-          cx={1}
-          cy={1}
-          cr={1}
-          className={cn(
-            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
-          )}
-        />
         <article>
           <section className="bg-coderaw-bg min-w-[300px] w-[100%] text-coderaw-text ">
             <form onSubmit={handleSubmit} id="contact-form">
