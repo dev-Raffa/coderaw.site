@@ -17,7 +17,7 @@ export const ServiceList = () => {
           <TabsTrigger
             key={`service-${index}`}
             value={service.label}
-            className="text-sm text-foreground-muted border-foreground-muted px-1 flex gap-1 md:text-base rounded-lg w-[220px] border"
+            className="text-sm bg-background text-foreground-muted border-foreground-muted px-1 flex gap-1 md:text-base rounded-lg w-[220px] border"
           >
             {service.icon && service.icon}
             {service.label}

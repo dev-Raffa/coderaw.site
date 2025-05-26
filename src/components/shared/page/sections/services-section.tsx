@@ -1,4 +1,3 @@
-import { ServiceLists } from "@/components/lists/services/service-lists-antigo";
 import { IntegrationsSection } from "../integrations-section";
 import { ServiceList } from "@/components/lists/services/service-lists";
 
@@ -17,6 +16,7 @@ export const ServicesSection = () => {
       </div>
       <div className="section-content">
         <ServiceList />
+        <IntegrationsSection />
       </div>
     </section>
   );
