@@ -90,8 +90,8 @@ const config: Config = {
       },
       fontFamily: {
         title: ["var(--font-title)"],
-        text: ["var(--font-montserrat)"],
-        item: ["var(--font-title)"],
+        text: ["var(--font-text)"],
+        item: ["var(--font-text)"],
       },
     },
   },

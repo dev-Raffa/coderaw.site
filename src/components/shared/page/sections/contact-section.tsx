@@ -1,18 +1,25 @@
 "use client";
 
 import { serviceList } from "@/components/lists/services/services";
-import DotPattern from "@/components/magic-ui/dot-pattern";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import { number } from "zod";
 
 export default function Cta() {
+  const [name, setName] = useState("");
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
+    if(!Number(e.target.value)) {
+      setName(e.target.value);
+    }
+  };
   return (
     <section className="section" id="contact">
       <div className="section-texts">
@@ -34,7 +41,10 @@ export default function Cta() {
                   <Input
                     placeholder="Seu nome"
                     required
+                    value={name}
+                    onChange={(e)=>handleChange(e)}
                     type="text"
+                    pattern="[a-zA-ZáàãâéèêíìîóòõôúùûçÁÀÃÂÉÈÊÍÌÎÓÒÕÔÚÙÛÇ\s]+"
                     minLength={3}
                   />
                   <p>insira no mínimo 3 caractéres</p>

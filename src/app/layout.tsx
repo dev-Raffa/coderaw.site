@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Chakra_Petch } from "next/font/google";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/shared/page/layout/footer";
 import { TopGradient } from "@/components/shared/top-gradient";
@@ -9,20 +9,25 @@ import { Header } from "@/components/shared/page/layout/header";
 import { AOSInit } from "@/components/shared/aos-init";
 import GridPattern from "@/components/magic-ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import localFont from 'next/font/local'
 
+const lubrifont = localFont({
+  src: "../../public/WDXL_Lubrifont_TC/WDXLLubrifontTC-Regular.ttf",
+  variable: "--font-title"
+});
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-text",
 });
 
-const geist = Geist({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  style: ["normal"],
+const chakra = Chakra_Petch({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-title",
-});
+})
+
 
 export const metadata: Metadata = {
   title: "Consultoria em Software | coderaw.io",
@@ -37,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geist.variable} relative ${inter.className} antialiased`}
+        className={`${chakra.variable} relative ${inter.className} antialiased`}
       >
         <GridPattern
           width={40}

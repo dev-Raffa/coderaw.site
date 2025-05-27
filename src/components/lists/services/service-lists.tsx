@@ -35,7 +35,7 @@ export const ServiceList = () => {
             <section className="flex flex-col items-center p-8 py-12 justify-start">
               <h3 className="mb-2 content-title">{service.title}</h3>
               <p className="mb-4 content-text">{service.description}</p>
-              <ul className="flex flex-col gap-2 mb-4">
+              <ul className="flex flex-col gap-2 w-full px-1 mb-4">
                 {service.features?.map((feature, index) => (
                   <li key={`feature-${index}`} className="content-text">
                     <FaRegCheckCircle className="inline-block mr-2 text-green-700" />

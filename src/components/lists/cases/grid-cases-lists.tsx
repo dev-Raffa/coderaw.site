@@ -1,8 +1,8 @@
-import "./teste.css";
+import "./list-cases.styles.css";
 import Image from "next/image";
 import { cases } from "./cases";
 
-export function TestCasesList() {
+export function CasesList() {
   return (
     //@ts-expect-error
     <ul id="cards" style={{ "--columns": 4 }}>
@@ -16,10 +16,14 @@ export function TestCasesList() {
           >
             {index === 0 && (
               <div className="card-header">
-                
+                <h2 className="section-title">Nossos Casos de Sucesso</h2>
+                <p className="section-subtitle">
+                  Conheça os projetos que desenvolvemos e como impactamos nossos
+                  clientes.
+                </p>
               </div>
             )}
-            <article className="card-content backdrop-blur-xl">
+            <article className="card-content backdrop-blur-md">
               <figure>
                 <Image src={caseItem.image} fill alt={caseItem.name} />
               </figure>

@@ -1,3 +1,4 @@
+import { CasesList } from "@/components/lists/cases/grid-cases-lists";
 import { TestCasesList } from "@/components/lists/cases/teste";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { cn } from "@/lib/utils";
@@ -8,16 +9,9 @@ export  const CasesSection = () => {
       id="cases"
       className="section bg-gradient-to-tr from-zinc-900 to-black"
     >
-      <div className="section-texts">
-        <h2 className="section-title">Nossos Casos de Sucesso</h2>
-        <p className="section-subtitle">
-          Conheça os projetos que desenvolvemos e como impactamos nossos
-          clientes.
-        </p>
-      </div>
       <div className="section-content">
-        {/*<CasesList />*/}
-        <TestCasesList />
+        <CasesList />
+        {/* <TestCasesList /> */}
       </div>
       <DotPattern
         width={10}
@@ -27,7 +21,7 @@ export  const CasesSection = () => {
         cr={1}
         className={cn(
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
-            " h-[200px]"
+            " h-[1500px]"
         )}
       />
     </section>

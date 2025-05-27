@@ -12,5 +12,9 @@ export const subRouters = [
   {
     label: "Cases",
     href: "/#cases",
+  },
+  {
+    label: "Trabalhe Conosco",
+    href: "https://www.linkedin.com/company/coderaw/"
   }
 ]

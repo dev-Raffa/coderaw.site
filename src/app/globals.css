@@ -222,6 +222,7 @@
         border-color: #898888 !important;
         &:focus {
           outline: none;
+          border:none;
         }
       }
 
@@ -230,6 +231,7 @@
 
         &:hover{
           outline: 2px solid hsl(var(--primary));
+          border:none;
         }
       }
       
