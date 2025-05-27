@@ -25,7 +25,7 @@
     padding-top: calc(var(--index) * var(--card-top-offset));
 
     &:not(:first-child) {
-      padding-top: calc(var(--index) * 4px + 90px);
+      padding-top: calc(var(--index) * 4px + 100px);
     }
 
     .card-header {
@@ -33,7 +33,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 80px;
+      height: 90px;
 
       p {
         color: white;
@@ -66,6 +66,7 @@
         width: 100%;
         place-self: center;
         text-align: left;
+		padding-top: 12px;
         padding-right: 8px;
         display: grid;
         gap: 1em;
