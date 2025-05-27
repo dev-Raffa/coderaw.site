@@ -14,9 +14,7 @@ export function Footer() {
     <footer className="overflow-x-hidden w-full space-y-16 py-12 px-12 md:px-16 lg:px-24 bg-black">
       <section className="flex flex-col space-y-12 md:flex-row md:justify-between  md:space-y-0">
         <ul className="list-inside space-y-4">
-          <span className="font-medium text-white font-title">
-            Social
-          </span>
+          <span className="font-medium text-white font-title">Social</span>
           <li>
             <Link
               href="https://github.com/coderaw-io"
@@ -51,9 +49,7 @@ export function Footer() {
           </li>
         </ul>
         <ul className="list-inside space-y-4">
-          <span className="font-medium font-title text-white">
-            Atendimento
-          </span>
+          <span className="font-medium font-title text-white">Atendimento</span>
           <li>
             <Link
               href="mailto:contato@coderaw.io"
@@ -82,7 +78,7 @@ export function Footer() {
           </Link>
           <li>
             <Link
-              href={"/servicos"}
+              href={"#services"}
               className="flex px-3 items-center gap-2 text-sm text-muted-foreground hover:text-primary"
             >
               Servicos
@@ -90,7 +86,9 @@ export function Footer() {
           </li>
           <li>
             <Link
-              href={"/trabalhe-conosco"}
+              href={
+                "https://www.linkedin.com/company/coderaw/"
+              }
               className="flex px-3 items-center gap-2 text-sm text-muted-foreground hover:text-primary"
             >
               Trabalhe conosco

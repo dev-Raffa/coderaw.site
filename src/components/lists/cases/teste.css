@@ -1,144 +1,169 @@
-:root {
-  --card-height: 85vh;
-  --top: 75px;
-  --card-margin: 4vw;
-  --card-top-offset: 1em;
-  --outline-width: 0px;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-#cards {
-  /* Make place at bottom, as items will slide to that position*/
-  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
-  /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
-  margin-bottom: var(--card-margin);
-  list-style: none;
-  outline: calc(var(--outline-width) * 10) solid hotpink;
+.projects-slide {
+  width: 1100px;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  padding: 24px;
+  overflow: clip;
+  color: white;
+  gap: 8px;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(var(--numcards), var(--card-height));
-  gap: var(--card-margin);
+  &::before {
+    background-color: rgba(255, 255, 255, 0.18);
+    width: 85%;
+    height: calc(100% - 48px);
+    right: 0;
+    top: 10px;
+    position: absolute;
+    content: "";
+    border-radius: 24px;
+    z-index: 0;
+    box-shadow: 0 0 5px 1px black;
+  }
 
-  .card {
-    position: sticky;
-    top: var(--top);
-    padding-top: calc(var(--index) * var(--card-top-offset));
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 
-    &:not(:first-child) {
-      padding-top: calc(var(--index) * 4px + 100px);
-    }
-
-    .card-header {
-      display: flex;
-      flex-direction: column;
+    article {
+      width: 1052px;
+      display: none;
+      min-height: 380px;
+	  height: 100%;
       align-items: center;
-      justify-content: center;
-      height: 90px;
-
-      p {
-        color: white;
-      }
-    }
-
-    .card-content {
-      box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
-      background: rgba(255, 255, 255, 0.123);
-      color: rgb(255, 255, 255);
-      border-radius: 1em;
-      overflow: hidden;
-      width: 90vw;
-	  height: var(--card-height);
-	  max-height: 700px;
-	  max-width: 1100px;
-      display: grid;
-      gap: 12px;
-      grid-template-areas: "img text";
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      align-items: stretch;
-      outline: var(--outline-width) solid blue;
-
-      transform-origin: 50% 0%;
-      will-change: transform;
-
-      section {
-        grid-area: text;
-        width: 100%;
-        place-self: center;
-        text-align: left;
-		padding-top: 12px;
-        padding-right: 8px;
-        display: grid;
-        gap: 1em;
-        place-items: start;
-
-        h3 {
-          width: 100%;
-          font-size: var(--font-title);
-          margin-bottom: 8px;
-          text-align: center;
-          font-weight: 500;
-        }
-
-        ul {
-          gap: 12px;
-
-          li {
-            h4 {
-              font-size: 16px;
-            }
-
-            p {
-              font-size: 15px;
-              font-weight: 300;
-              color: rgb(223, 221, 221);
-            }
-          }
-        }
-      }
+      gap: 36px;
 
       figure {
-        grid-area: img;
-        overflow: hidden;
+        width: 40%;
+        height: 350px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 5px 1px black;
+		position: relative;
+		overflow: hidden;
+      }
+
+      section {
+        width: 60%;
+        height: 100%;
+        padding: 12px 0;
         position: relative;
+
+        h3 {
+          font-weight: bold;
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+        ul {
+          position: absolute;
+          bottom: 48px;
+          right: 16px;
+          display: flex;
+          gap: 24px;
+        }
       }
     }
-  }
 
-  &:first-child {
-    article::before {
-      background-color: rgba(255, 255, 255, 0.18);
+    .index-carousel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 40px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      label {
+        input[name="index"] {
+          cursor: pointer;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border: 1px solid white;
+          border-radius: 50%;
+        }
+        input[name="index"]:checked {
+          background-color: white;
+          height: 22px;
+          border-radius: 40%;
+          border: none;
+        }
+      }
+    }
+
+    .index-carousel:has(label input[value="1"]:checked)
+      ~ article[name="item-1"] {
+      display: flex;
+
+      figure {
+        animation: scaleFigure 0.7s ease-out;
+      }
+
+      section {
+        animation: textAnimation 0.7s ease-out;
+      }
+    }
+
+    .index-carousel:has(label input[value="2"]:checked)
+      ~ article[name="item-2"] {
+      display: flex;
+
+      figure {
+        animation: scaleFigure 0.6s;
+      }
+
+      section {
+        animation: textAnimation 0.7s ease-out;
+      }
+    }
+
+    .index-carousel:has(label input[value="3"]:checked)
+      ~ article[name="item-3"] {
+      display: flex;
+
+      figure {
+        animation: scaleFigure 0.6s;
+      }
+
+      section {
+        animation: textAnimation 0.7s ease-out;
+      }
     }
   }
 }
 
-@supports (animation-timeline: view()) {
-  .card {
-    --index0: calc(var(--index) - 1); /* 0-based index */
-    --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
-    --reverse-index0: calc(
-      var(--reverse-index) - 1
-    ); /* 0-based reverse index */
+@keyframes scaleFigure {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
   }
-
-  @keyframes scale {
-    to {
-      transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
-    }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
+}
 
-  #cards {
-    --numcards:4;
-	view-timeline-name: --cards-element-scrolls-in-body;
+@keyframes textAnimation {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
   }
-
-  .card__content {
-    --start-range: calc(var(--index0) / var(--numcards) * 100%);
-    --end-range: calc((var(--index)) / var(--numcards) * 100%);
-
-    animation: linear scale forwards;
-    animation-timeline: --cards-element-scrolls-in-body;
-    animation-range: exit-crossing var(--start-range) exit-crossing
-      var(--end-range);
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

@@ -1,53 +1,57 @@
+"use client";
+
 import "./teste.css";
 import Image from "next/image";
 import { cases } from "./cases";
+import { useState } from "react";
 
 export function TestCasesList() {
+  const [ itemSelected, setItemSelected ] = useState(0);
+
+  const selectItem = (index: number) => {
+    setItemSelected(index);
+  };
+
   return (
-    //@ts-expect-error 
-    <ul id="cards" style={{'--columns': 4}}>
-      {cases.map((caseItem, index) => {
-        return (
-          <li
-            className="card"
-            key={`case-card-${index}`}
-            //@ts-expect-error
-            style={{ "--index": index + 1 }}
-          >
-            {index === 0 && (
-              <div className="card-header">
-                <h2 className="section-title">Cases de Sucesso</h2>
-                <p className="section-description">
-                  Conheça alguns dos projetos que desenvolvemos e os resultados
-                  que alcançamos
-                </p>
-              </div>
-            )}
-            <article className="card-content backdrop-blur-xl">
+    <section className="projects-slide">
+      <section className="items">
+        <ul className="index-carousel">
+          {cases.map((_, index) => {
+            return (
+              <label key={`carousel-index-${index}`}>
+                <input
+                  type="radio"
+                  name="index"
+                  value={index + 1}
+                  onChange={() => selectItem(index)}
+                  checked={index === itemSelected ? true : false}
+                />
+              </label>
+            );
+          })}
+        </ul>
+        {cases.map((caseItem, index) => {
+          return (
+            // @ts-expect-error
+            <article name={`item-${index + 1}`} key={`case-${index}`}>
               <figure>
-                <Image src={caseItem.image} fill alt={caseItem.name} />
+                <Image fill src={caseItem.image} alt={caseItem.name} className="object-cover" />
               </figure>
               <section>
                 <h3>{caseItem.name}</h3>
-                <ul className="flex flex-col h-full">
-                  <li className="h-[fit-content]">
-                    <h4>Desafio Inicial</h4>
-                    <p> {caseItem.desafio}</p>
-                  </li>
-                  <li>
-                    <h4>Solução Proposta</h4>
-                    <p>{caseItem.solucao}</p>
-                  </li>
-                  <li>
-                    <h4>Resultado Atual</h4>
-                    <p>{caseItem.resultado}</p>
-                  </li>
+                <p>{caseItem.desafio}</p>
+                <p>{caseItem.solucao}</p>
+                <p>{caseItem.resultado}</p>
+                <ul>
+                  <li>repo</li>
+                  <li>prototipo</li>
+                  <li>projeto</li>
                 </ul>
               </section>
             </article>
-          </li>
-        );
-      })}
-    </ul>
+          );
+        })}
+      </section>
+    </section>
   );
 }
