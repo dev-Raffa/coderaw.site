@@ -10,7 +10,7 @@ export function HeroSection() {
         </div>
 
         <div className="max-w-sm sm:max-w-3xl text-center mx-auto">
-          <p className="text-base text-muted-foreground sm:text-2xl  md:text-3xl lg:text-4xl">
+          <p className="text-base text-muted-foreground  md:text-3xl lg:text-4xl">
             Da consultoria à execução, aceleramos a transformação digital com
             tecnologias de ponta, IA e cloud computing.
           </p>

@@ -9,6 +9,7 @@
 .projects-slide {
   width: 1100px;
   height: 80vh;
+  max-height: 800px;
   position: relative;
   display: flex;
   padding: 24px;
