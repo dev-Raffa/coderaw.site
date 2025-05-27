@@ -1,5 +1,5 @@
 import About from "@/components/shared/page/sections/about-section";
-import Cases from "@/components/shared/page/sections/cases-section";
+import { CasesSection } from "@/components/shared/page/sections/cases-section";
 import Cta from "@/components/shared/page/sections/contact-section";
 import { FaqSection } from "@/components/shared/page/sections/faq-section";
 import { HeroSection } from "@/components/shared/page/sections/hero-section";
@@ -10,7 +10,7 @@ export default function LandingPage() {
     <>
       <HeroSection />
       <ServicesSection />
-      <Cases />
+      <CasesSection />
       <About />
       <FaqSection />
       <Cta />

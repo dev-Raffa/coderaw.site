@@ -1,0 +1,141 @@
+:root {
+  --card-height: 85vh;
+  --top: 75px;
+  --card-margin: 4vw;
+  --card-top-offset: 1em;
+  --outline-width: 0px;
+}
+
+#cards {
+  /* Make place at bottom, as items will slide to that position*/
+  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+  /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+  margin-bottom: var(--card-margin);
+  list-style: none;
+  outline: calc(var(--outline-width) * 10) solid hotpink;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  gap: var(--card-margin);
+
+  .card {
+    position: sticky;
+    top: var(--top);
+    padding-top: calc(var(--index) * var(--card-top-offset));
+
+    &:not(:first-child) {
+      padding-top: calc(var(--index) * 4px + 90px);
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+
+      p {
+        color: white;
+      }
+    }
+
+    .card-content {
+      box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.123);
+      color: rgb(255, 255, 255);
+      border-radius: 1em;
+      overflow: hidden;
+      width: 90vw;
+      max-width: 1100px;
+      display: grid;
+      gap: 12px;
+      grid-template-areas: "img text";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      align-items: stretch;
+      outline: var(--outline-width) solid blue;
+
+      transform-origin: 50% 0%;
+      will-change: transform;
+
+      section {
+        grid-area: text;
+        width: 100%;
+        place-self: center;
+        text-align: left;
+        padding-right: 8px;
+        display: grid;
+        gap: 1em;
+        place-items: start;
+
+        h3 {
+          width: 100%;
+          font-size: var(--font-title);
+          margin-bottom: 8px;
+          text-align: center;
+          font-weight: 500;
+        }
+
+        ul {
+          gap: 12px;
+
+          li {
+            h4 {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 15px;
+              font-weight: 300;
+              color: rgb(223, 221, 221);
+            }
+          }
+        }
+      }
+
+      figure {
+        grid-area: img;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+  }
+
+  &:first-child {
+    article::before {
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .card {
+    --index0: calc(var(--index) - 1); /* 0-based index */
+    --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+    --reverse-index0: calc(
+      var(--reverse-index) - 1
+    ); /* 0-based reverse index */
+  }
+
+  @keyframes scale {
+    to {
+      transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+    }
+  }
+
+  #cards {
+    --numcards:4;
+	view-timeline-name: --cards-element-scrolls-in-body;
+  }
+
+  .card__content {
+    --start-range: calc(var(--index0) / var(--numcards) * 100%);
+    --end-range: calc((var(--index)) / var(--numcards) * 100%);
+
+    animation: linear scale forwards;
+    animation-timeline: --cards-element-scrolls-in-body;
+    animation-range: exit-crossing var(--start-range) exit-crossing
+      var(--end-range);
+  }
+}

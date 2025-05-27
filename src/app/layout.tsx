@@ -1,15 +1,7 @@
 import "./globals.css";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import type { Metadata } from "next";
-import {
-  Michroma,
-  Montserrat,
-  Poppins,
-  Tomorrow
-} from "next/font/google";
+import { Inter, Geist } from "next/font/google";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/shared/page/layout/footer";
 import { TopGradient } from "@/components/shared/top-gradient";
@@ -18,20 +10,19 @@ import { AOSInit } from "@/components/shared/aos-init";
 import GridPattern from "@/components/magic-ui/grid-pattern";
 import { cn } from "@/lib/utils";
 
-const michroma = Michroma({
-  weight: ["400"],
+
+const inter = Inter({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const geist = Geist({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  style: ["normal"],
   subsets: ["latin"],
   variable: "--font-title",
 });
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
-
-
-gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export const metadata: Metadata = {
   title: "Consultoria em Software | coderaw.io",
@@ -46,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${michroma.variable} relative ${poppins.className} antialiased`}
+        className={`${geist.variable} relative ${inter.className} antialiased`}
       >
         <GridPattern
           width={40}

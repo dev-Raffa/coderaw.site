@@ -26,26 +26,22 @@ export const cases: TCase[] = [
   {
     name: "BeeConversa",
     desafio:
-      "O BeeConversa é a solução da Coderaw que potencializa o uso da API oficial do WhatsApp para empresas que desejam escalar sua comunicação com inteligência e eficiência.",
+      "Auxiliar empresas enfrentam dificuldades para escalar a comunicação com seus clientes via WhatsApp, lidando com limitações em campanhas em massa, atendimento automatizado ineficiente e falta de dados estratégicos para tomada de decisão.",
     solucao:
-      "Com o BeeConversa, é possível realizar envio de mensagens em massa e acompanhar métricas detalhadas das campanhas: estados com maior taxa de retorno, regiões com menor engajamento, horários mais efetivos — tudo para ajudar o cliente a tomar decisões baseadas em dados.",
-    resultado: "",
+      "O BeeConversa integra-se à API oficial do WhatsApp para oferecer uma plataforma completa de comunicação inteligente. Com campanhas em massa otimizadas por dados, atendimento via IA avançada baseada em LLMs com RAG, e uma infraestrutura flexível, a ferramenta transforma a forma como empresas se conectam com seu público.",
+    resultado:
+      "Mais engajamento, mais conversões e menos esforço. Com o BeeConversa, você automatiza o atendimento, toma decisões baseadas em dados reais e se comunica com milhares de clientes de forma personalizada, segura e escalável.",
     image: placeholderImage,
     testemonial: "",
   },
   {
-    name: "Spend Management",
-    desafio: "",
-    solucao: "",
-    resultado: "",
-    image: placeholderImage,
-    testemonial: "",
-  },
-  {
-    name: "CondoTec",
-    desafio: "",
-    solucao: "",
-    resultado: "",
+    name: "SpendManagement",
+    desafio:
+      "Auxiliar empresas e pessoas a controlar seus gastos com precisão, enfrentando a falta de visibilidade financeira, dificuldade em manter o orçamento sob controle e a ausência de informações claras para tomar decisões.",
+    solucao:
+      "O SpendManagement, da Coderaw, centraliza o controle financeiro em uma plataforma simples e visual. Com ele, é possível registrar despesas, categorizá-las, definir metas e acompanhar múltiplas carteiras com gráficos e insights em tempo real.",
+    resultado:
+      "Gestão financeira mais eficiente, redução de desperdícios e decisões orientadas por dados. Usuários ganham clareza sobre seus gastos, otimizam recursos e mantêm o foco em suas metas pessoais ou corporativas.",
     image: placeholderImage,
     testemonial: "",
   },

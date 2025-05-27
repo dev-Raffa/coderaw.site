@@ -1,16 +1,17 @@
-
 import { CasesList } from "@/components/lists/cases/grid-cases-lists";
+import { TestCasesList } from "@/components/lists/cases/teste";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { cn } from "@/lib/utils";
 
-export default function Cases() {
+export  const CasesSection = () => {
   return (
     <section
       id="cases"
       className="section bg-gradient-to-tr from-zinc-900 to-black"
     >
       <div className="section-content">
-        <CasesList />
+        {/*<CasesList />*/}
+        <TestCasesList />
       </div>
       <DotPattern
         width={10}
