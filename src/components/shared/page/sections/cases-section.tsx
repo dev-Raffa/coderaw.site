@@ -24,12 +24,12 @@ export  const CasesSection = () => {
         )}
       />
       <DotPattern
-        width={5}
-        height={5}
+        width={20}
+        height={20}
         cx={1}
         cy={1}
         cr={1}
-        className={cn(" md:hidden bg-[#e7dfdf42] " + "h-full")}
+        className={cn(" md:hidden opacity-30 " + "h-full")}
       />
     </section>
   );

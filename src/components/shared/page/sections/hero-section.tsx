@@ -3,7 +3,7 @@ import Link from "next/link";
 export function HeroSection() {
   return (
     <div className="section ">
-      <div className="h-full mb-[56px] flex flex-col gap-[22px] max-w-4xl md:mb-[18px] mx-auto">
+      <div className="h-full pb-[96px] flex flex-col gap-[22px] max-w-4xl md:mb-[18px] mx-auto">
         <div className="max-w-sm sm:max-w-4xl text-center mx-auto">
           <h1 className="block font-medium font-title text-5xl  md:text-6xl lg:text-[5.4rem]">
             Soluções que <br /> impulsionam negócios
@@ -17,7 +17,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <div className="max-w-sm mt-2 sm:max-w-4xl text-center mx-auto">
+        <div className="max-w-sm lg:hidden mt-2 sm:max-w-4xl text-center mx-auto">
           <Link
             href={"#contact"}
             className="bg-black py-3 px-6 rounded-md text-xl text-primary font-item"
@@ -25,7 +25,7 @@ export function HeroSection() {
             Fale com um especialista
           </Link>
         </div>
-        <div className="absolute bottom-[10px]  sm:bottom-[3px] left-[0]">
+        <div className="absolute bottom-[16px]  sm:bottom-[3px] left-[0]">
           <ToolsListSlide />
         </div>
       </div>

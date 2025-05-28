@@ -1,20 +1,25 @@
-import iconBlack from "@/app/assets/images/black-icon.png"
-import iconWhite from "@/app/assets/images/white-icon.png"
-import Image from "next/image"
 
-interface IconProps {
-  className?: string
-  color?: "black" | "white"
-}
-
-export function Icon({ className, color= "black" }: IconProps) {
+export function Icon() {
   return (
-    <Image
-      src={color === "white" ? iconWhite : iconBlack}
-      alt="Logo"
-      width="100"
-      height="100"
-      className={className}
-    />
-  )
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.0"
+      height="1em"
+      viewBox="0 0 500.000000 500.000000"
+      preserveAspectRatio="xMidYMid meet"
+      fill="currentColor"
+    >
+      <g
+        transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
+        stroke="none"
+      >
+        <path d="M1535 4189 c-361 -53 -647 -325 -720 -684 -14 -71 -15 -188 -13 -1035 l3 -955 23 -80 c43 -153 117 -281 226 -390 103 -102 228 -175 373 -217 l78 -23 990 0 c1119 0 1043 -5 1222 81 176 84 313 222 398 398 85 178 80 104 80 1211 0 978 0 980 -22 1060 -43 159 -101 261 -213 379 -110 115 -256 200 -420 243 -59 15 -155 17 -1005 19 -517 1 -967 -2 -1000 -7z m1897 -300 c177 -61 331 -195 412 -361 78 -156 76 -130 76 -1034 0 -764 -1 -804 -20 -878 -58 -229 -242 -428 -464 -503 l-81 -28 -830 -3 c-931 -3 -908 -5 -1053 68 -185 94 -317 253 -372 452 -19 70 -20 100 -20 898 0 920 -3 878 70 1025 91 185 256 322 450 374 73 19 101 20 915 18 l840 -2 77 -26z" />
+        <path d="M1830 3050 l0 -140 400 0 400 0 0 140 0 140 -400 0 -400 0 0 -140z" />
+        <path d="M3300 2915 l0 -135 -135 0 -135 0 0 -140 0 -140 -135 0 -135 0 0 -140 0 -140 135 0 135 0 0 140 0 140 135 0 135 0 0 135 0 135 135 0 135 0 0 140 0 140 -135 0 -135 0 0 -135z" />
+        <path d="M1560 2490 l0 -421 133 3 132 3 0 415 0 415 -132 3 -133 3 0 -421z" />
+        <path d="M3300 2340 l0 -140 135 0 135 0 0 140 0 140 -135 0 -135 0 0 -140z" />
+        <path d="M1830 1930 l0 -140 400 0 400 0 0 140 0 140 -400 0 -400 0 0 -140z" />
+      </g>
+    </svg>
+  );
 }

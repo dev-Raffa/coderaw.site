@@ -56,7 +56,7 @@ export function Header() {
 
       <header className="h-16 w-full flex justify-between items-center p-4 gap-3 sm:hidden">
         <Link
-          className="relative text-[40px] flex items-center rounded-[0.3rem]"
+          className="relative text-[96px] flex items-center rounded-[0.3rem]"
           href="/"
         >
           <Logo />

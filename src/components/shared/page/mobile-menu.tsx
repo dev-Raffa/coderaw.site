@@ -30,8 +30,8 @@ export function MobileMenu() {
 
       <SheetContent className="p-0">
         <SheetHeader className="py-6 pl-3">
-          <SheetTitle className="flex items-center gap-2">
-            <Icon  className="w-1/6" />
+          <SheetTitle className="flex text-black text-[40px] items-center gap-2">
+            <Icon />
             <span className="text-base">
               Links de navegação
             </span>

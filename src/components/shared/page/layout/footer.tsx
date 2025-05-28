@@ -71,7 +71,7 @@ export function Footer() {
           </li>
         </ul>
         <ul className="list-inside space-y-4 overflow-x-hidden">
-          <Link href={"/"} className="text-white text-[40px]">
+          <Link href={"/"} className="text-white text-[96px]">
             <Logo />
           </Link>
           <li>
