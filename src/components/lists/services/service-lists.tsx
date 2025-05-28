@@ -12,12 +12,12 @@ export const ServiceList = () => {
       defaultValue={highlightedServices[0].label}
       className="mx-auto mb-8 flex flex-col gap-2 items-center w-full bg-[transparent]"
     >
-      <TabsList className="bg-[transparent] grid w-fit grid-cols-2 gap-2 md:grid-cols-4">
+      <TabsList className="bg-[transparent] h-full grid w-fit grid-cols-2 gap-2 md:grid-cols-4">
         {highlightedServices.map((service, index) => (
           <TabsTrigger
             key={`service-${index}`}
             value={service.label}
-            className="text-sm bg-background text-foreground-muted border-foreground-muted px-1 flex gap-1 md:text-base rounded-lg w-[220px] border"
+            className="text-sm bg-background text-foreground-muted border-foreground-muted px-1 flex gap-1 md:text-base rounded-lg md:w-[220px] border"
           >
             {service.icon && service.icon}
             {service.label}
@@ -29,13 +29,13 @@ export const ServiceList = () => {
         <TabsContent
           key={`service-${index}`}
           value={service.label}
-          className="rounded-2xl overflow-hidden shadow-lg max-w-[1100px] p-0  border-foreground-muted bg-white"
+          className="rounded-2xl overflow-hidden w-full min-w-[280px] shadow-lg md:max-w-[1100px] p-0  border-foreground-muted bg-white"
         >
-          <article className="grid gap-8 md:grid-cols-2">
-            <section className="flex flex-col items-center p-8 py-12 justify-start">
+          <article className="grid gap-2 md:gap-8 w-full md:grid-cols-2">
+            <section className="flex flex-col w-full items-center p-4 md:p-8 py-12 justify-start">
               <h3 className="mb-2 content-title">{service.title}</h3>
               <p className="mb-4 content-text">{service.description}</p>
-              <ul className="flex flex-col gap-2 w-full px-1 mb-4">
+              <ul className="flex flex-col gap-2 w-full px-1 mb-1 md:mb-4">
                 {service.features?.map((feature, index) => (
                   <li key={`feature-${index}`} className="content-text">
                     <FaRegCheckCircle className="inline-block mr-2 text-green-700" />
@@ -45,7 +45,7 @@ export const ServiceList = () => {
               </ul>
             </section>
             <section className="flex bg-[#d9f4ff6e] items-center p-8 py-12 justify-center">
-              <ul className="flex border border-foreground-muted w-96 rounded-xl flex-col bg-background">
+              <ul className="flex border border-foreground-muted  md:w-96 rounded-xl flex-col bg-background">
                 {service.advantages?.map((advantage, index) => (
                   <li
                     key={`advantage-${index}`}

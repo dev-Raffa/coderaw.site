@@ -1,9 +1,13 @@
 :root {
   --card-height: 85vh;
   --top: 80px;
-  --card-margin: 4vw;
+  --card-margin: 18px;
   --card-top-offset: 1em;
   --outline-width: 0px;
+
+  @media screen and (min-width: 1024px) {
+    --card-margin: 4vw;
+  }
 }
 
 #cards {
@@ -14,17 +18,15 @@
   list-style: none;
   outline: calc(var(--outline-width) * 10) solid hotpink;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  display: flex;
+  flex-direction: column;
   gap: var(--card-margin);
-
+  z-index: 101;
+  
   .card {
-    position: sticky;
     top: var(--top);
     padding-top: calc(var(--index) * var(--card-top-offset));
-    height: var(--card-height);
-
+    
     &:not(:first-child) {
       padding-top: calc(var(--index) * 4px + 125px);
     }
@@ -34,7 +36,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 120px;
 
       p {
         color: white;
@@ -49,22 +50,23 @@
       overflow: hidden;
       width: 90vw;
       max-width: 1100px;
-      height: calc(var(--card-height) - 100px);
-      max-height: 800px;
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       align-items: stretch;
+      padding-bottom: 24px;
       
       transform-origin: 50% 0%;
       will-change: transform;
 
       section {
-        width: 65%;
+        width: 100%;
         place-self: center;
         text-align: left;
-        height: 100%;
+        height: 60%;
         padding-top: 12px;
         padding-right: 8px;
+        padding-left: 8px;
         display: flex;
         flex-direction: column;
         gap: 18px;
@@ -107,17 +109,42 @@
       }
 
       figure {
-        width: 35%;
+        width: 100%;
+        height: 250px;
         overflow: hidden;
         position: relative;
       }
     }
-  }
 
-  &:first-child {
-    article::before {
-      background-color: rgba(255, 255, 255, 0.18);
-    }
+    @media screen and (min-width: 1024px) {
+      position: sticky;
+      height: var(--card-height);
+      
+      .card-header{
+        height: 120px;
+      }
+
+      .card-content {
+        height: calc(var(--card-height) - 100px);
+        max-height: 500px;
+        flex-wrap: nowrap;
+        padding-bottom: unset;
+
+        section{
+          width: 65%;
+          place-self: center;
+          text-align: left;
+          height: 100%;
+          padding-right: 8px;
+          padding-left: 0px;
+        }
+        
+        figure {
+          width: 35%;
+          height: 100%;
+        }
+      }
+    } 
   }
 }
 

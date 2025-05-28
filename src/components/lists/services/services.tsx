@@ -70,7 +70,7 @@ export const serviceList: service[] = [
         label: "Melhoria na experiência do usuário final",
       },
     ],
-    icon: <MdOutlineDevices />,
+    icon: <MdOutlineDevices className="hidden md:block" />,
     highlight: true,
   },
   {
@@ -78,7 +78,7 @@ export const serviceList: service[] = [
     title: "Seu negócio na nuvem, com segurança e escalabilidade.",
     description:
       "Auxiliamos na adoção, migração e otimização de ambientes em nuvem, com foco em performance, redução de custos e conformidade.",
-    icon: <SlSocialSoundcloud />,
+    icon: <SlSocialSoundcloud className="hidden md:block" />,
     features: [
       "Arquitetura em AWS, Azure e GCP",
       "Otimização de recursos e custos",
@@ -124,7 +124,7 @@ export const serviceList: service[] = [
         label: "Experiência personalizada para seus usuários",
       },
     ],
-    icon: <LuBrain />,
+    icon: <LuBrain className="hidden md:block" />,
     highlight: true,
   },
   {
@@ -151,7 +151,7 @@ export const serviceList: service[] = [
         label: "Maior compatibilidade com novas tecnologias",
       },
     ],
-    icon: <MdSystemUpdateAlt />,
+    icon: <MdSystemUpdateAlt className="hidden md:block" />,
     highlight: true,
   },
   {
@@ -178,7 +178,7 @@ export const serviceList: service[] = [
         label: "Alta performance desde o início",
       },
     ],
-    icon: <MdArchitecture />,
+    icon: <MdArchitecture className="hidden md:block" />,
     highlight: false,
   },
   {
@@ -205,7 +205,7 @@ export const serviceList: service[] = [
         label: "Proteção contínua contra ameaças",
       },
     ],
-    icon: <MdSecurity />,
+    icon: <MdSecurity className="hidden md:block" />,
     highlight: false,
   },
   {
@@ -232,7 +232,7 @@ export const serviceList: service[] = [
         label: "Alta performance desde a arquitetura",
       },
     ],
-    icon: <MdSchema />,
+    icon: <MdSchema className="hidden md:block" />,
     highlight: false,
   },
   {
@@ -259,7 +259,7 @@ export const serviceList: service[] = [
         label: "Atualizações com zero downtime",
       },
     ],
-    icon: <MdSupportAgent />,
+    icon: <MdSupportAgent className="hidden md:block" />,
     highlight: false,
   },
 ];

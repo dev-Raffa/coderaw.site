@@ -8,7 +8,7 @@ export const ReasonsList = ()=>{
             <div className="content-title flex-shrink-0 mt-1">
               {reason.icon}
             </div>
-            <article className="w-[70%]">
+            <article className=" w-full md:w-[70%]">
               <h3 className="content-title">{reason.title}</h3>
               <p className="content-text">{reason.description}</p>
             </article>

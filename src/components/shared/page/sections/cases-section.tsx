@@ -11,7 +11,6 @@ export  const CasesSection = () => {
     >
       <div className="section-content">
         <CasesList />
-        {/* <TestCasesList /> */}
       </div>
       <DotPattern
         width={10}
@@ -20,9 +19,17 @@ export  const CasesSection = () => {
         cy={1}
         cr={1}
         className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
+          "hidden md:block [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]" +
             " h-[1500px]"
         )}
+      />
+      <DotPattern
+        width={5}
+        height={5}
+        cx={1}
+        cy={1}
+        cr={1}
+        className={cn(" md:hidden bg-[#e7dfdf42] " + "h-full")}
       />
     </section>
   );

@@ -71,10 +71,8 @@ export function Footer() {
           </li>
         </ul>
         <ul className="list-inside space-y-4 overflow-x-hidden">
-          <Link href={"/"}>
-            <figure className="w-[180px] h-[25px] relative flex overflow-x-hidden">
-              <Logo color="white" className="object-cover overflow-x-hidden" />
-            </figure>
+          <Link href={"/"} className="text-white text-[40px]">
+            <Logo />
           </Link>
           <li>
             <Link
@@ -86,9 +84,7 @@ export function Footer() {
           </li>
           <li>
             <Link
-              href={
-                "https://www.linkedin.com/company/coderaw/"
-              }
+              href={"https://www.linkedin.com/company/coderaw/"}
               className="flex px-3 items-center gap-2 text-sm text-muted-foreground hover:text-primary"
             >
               Trabalhe conosco

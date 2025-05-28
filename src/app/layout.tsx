@@ -9,12 +9,6 @@ import { Header } from "@/components/shared/page/layout/header";
 import { AOSInit } from "@/components/shared/aos-init";
 import GridPattern from "@/components/magic-ui/grid-pattern";
 import { cn } from "@/lib/utils";
-import localFont from 'next/font/local'
-
-const lubrifont = localFont({
-  src: "../../public/WDXL_Lubrifont_TC/WDXLLubrifontTC-Regular.ttf",
-  variable: "--font-title"
-});
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
