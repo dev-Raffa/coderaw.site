@@ -3,7 +3,7 @@ import Link from "next/link";
 export function HeroSection() {
   return (
     <div className="section ">
-      <div className="h-full pb-[96px] flex flex-col gap-[22px] max-w-4xl md:mb-[18px] mx-auto">
+      <div className="h-full pb-[96px] flex flex-col gap-[22px] max-w-4xl md:pb-[12px] md:mb-[18px] mx-auto">
         <div className="max-w-sm sm:max-w-4xl text-center mx-auto">
           <h1 className="block font-medium font-title text-5xl  md:text-6xl lg:text-[5.4rem]">
             Soluções que <br /> impulsionam negócios
