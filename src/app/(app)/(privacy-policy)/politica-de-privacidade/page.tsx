@@ -3,21 +3,20 @@ import Image from "next/image";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="w-full">
-      <div className="relative">
-        <div data-aos="fade-right" className="flex justify-center items-center size-full">
+    <div className="w-full pt-[60px] md:pt-[120px] pb-[48px]">
+      <div className="relative w-full flex flex-col items-center justify-center">
+        <div data-aos="fade-right" className="flex relative justify-center items-center w-4/5 h-[300px] sm:h-[400px]">
           <Image
             src={lgpdImg}
-            width={1200}
-            height={675}
-            className="object cover w-[90%] rounded-[0.3rem]"
+            fill
+            className="object-contain w-[90%] rounded-[0.3rem]"
             alt="LGPD Imagem"
             priority
           />
         </div>
 
         <div data-aos="fade-left" className="max-w-3xl mx-auto w-full flex flex-col space-y-8 px-6 pt-12 sm:px-0 sm:pt-16">
-          <h1 className="text-3xl text-left md:text-5xl font-bold">
+          <h1 className="text-3xl text-title text-left md:text-5xl font-bold">
             Política de privacidade
           </h1>
 
@@ -52,7 +51,7 @@ export default function PrivacyPolicy() {
         </div>
 
         <div data-aos="fade-right" className="max-w-3xl mx-auto w-full flex flex-col space-y-8 px-6 pt-12 sm:px-0 sm:pt-16">
-          <h1 className="text-3xl text-left md:text-5xl font-bold">
+          <h1 className="text-3xl text-title text-left md:text-5xl font-bold">
             Compromisso do Usuário
           </h1>
 
@@ -78,7 +77,7 @@ export default function PrivacyPolicy() {
         </div>
 
         <div data-aos="fade-left" className="max-w-3xl mx-auto w-full flex flex-col space-y-8 px-6 pt-12 sm:px-0 sm:pt-16">
-          <h1 className="text-3xl text-left md:text-5xl font-bold">
+          <h1 className="text-3xl text-title text-left md:text-5xl font-bold">
             Mais informações
           </h1>
 

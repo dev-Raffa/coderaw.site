@@ -169,7 +169,7 @@
   @apply text-3xl md:text-4xl font-title font-bold text-black text-center w-full;
 }
 .section-subtitle {
-  @apply  text-xl md:text-2xl py-2 text-muted-foreground text-center w-full mx-auto font-medium ;
+  @apply  text-xl md:text-2xl py-2 px-4 text-muted-foreground text-center w-full mx-auto font-medium ;
 }
 
 .section-content {

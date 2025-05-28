@@ -18,38 +18,39 @@ export function Header() {
     const caseSection: HTMLElement = gsap.utils.toArray(
       "#cases"
     )[0] as HTMLElement;
-
-    ScrollTrigger.create({
-      trigger: caseSection,
-      start: "top top",
-      onEnter: () => {
-        gsap.to(headerRef.current, {
-          color: "rgb(255, 255, 255)",
-        });
-      },
-      onLeave: () => {
-        gsap.to(headerRef.current, {
-          color: "rgb(0, 0, 0)",
-        });
-      },
-      onEnterBack: () => {
-        gsap.to(headerRef.current, {
-          color: "rgb(255, 255, 255)",
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(headerRef.current, {
-          color: "rgb(0, 0, 0)",
-        });
-      },
-    });
+    
+    caseSection &&
+      ScrollTrigger.create({
+        trigger: caseSection,
+        start: "top top",
+        onEnter: () => {
+          gsap.to(headerRef.current, {
+            color: "rgb(255, 255, 255)",
+          });
+        },
+        onLeave: () => {
+          gsap.to(headerRef.current, {
+            color: "rgb(0, 0, 0)",
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(headerRef.current, {
+            color: "rgb(255, 255, 255)",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(headerRef.current, {
+            color: "rgb(0, 0, 0)",
+          });
+        },
+      });
   }, []);
 
   return (
     <>
       <header
         ref={headerRef}
-        className="hidden h-[100px] fixed top-[0] flex items-center sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm"
+        className="hidden h-[100px] z-[102] fixed top-[0] flex items-center sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm"
       >
         <Navigation />
       </header>

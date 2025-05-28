@@ -1,5 +1,8 @@
 import placeholderImage from "../../../../public/placeholder.svg"
-
+import smartImage from "../../../app/assets/images/system-smartconsig.jpg";
+import beeImage from "../../../app/assets/images/beeconversa.png";
+import spendImage from "../../../app/assets/images/spend-dashboard.jpeg";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type TCase = {
   name: string;
@@ -7,7 +10,7 @@ type TCase = {
   solucao?: string;
   resultado?: string;
   description?: string;
-  image: string;
+  image: StaticImport;
   testemonial: string;
 };
 
@@ -20,7 +23,7 @@ export const cases: TCase[] = [
       "A equipe da Coderaw desenvolveu uma plataforma própria, sob medida, que permite aos clientes da SmartConsig simular a margem de crédito e iniciar o atendimento direto via WhatsApp. Criamos um sistema inteligente de roteamento, que define automaticamente qual operador deve atender cada cliente com base em carga de atendimentos.",
     resultado:
       "Hoje, toda a operação de vendas da SmartConsig é gerenciada pela plataforma desenvolvida pela coderaw: da origem do lead até o fechamento do contrato. Métricas de atendimento, tabulação de contatos e integração com campanhas de marketing foram centralizadas em uma única solução — substituindo diversas ferramentas externas e otimizando todo o processo.",
-    image: placeholderImage,
+    image: smartImage,
     testemonial: "",
   },
   {
@@ -31,7 +34,7 @@ export const cases: TCase[] = [
       "O BeeConversa integra-se à API oficial do WhatsApp para oferecer uma plataforma completa de comunicação inteligente. Com campanhas em massa otimizadas por dados, atendimento via IA avançada baseada em LLMs com RAG, e uma infraestrutura flexível, a ferramenta transforma a forma como empresas se conectam com seu público.",
     resultado:
       "Mais engajamento, mais conversões e menos esforço. Com o BeeConversa, você automatiza o atendimento, toma decisões baseadas em dados reais e se comunica com milhares de clientes de forma personalizada, segura e escalável.",
-    image: placeholderImage,
+    image: beeImage,
     testemonial: "",
   },
   {
@@ -42,7 +45,7 @@ export const cases: TCase[] = [
       "O SpendManagement, da Coderaw, centraliza o controle financeiro em uma plataforma simples e visual. Com ele, é possível registrar despesas, categorizá-las, definir metas e acompanhar múltiplas carteiras com gráficos e insights em tempo real.",
     resultado:
       "Gestão financeira mais eficiente, redução de desperdícios e decisões orientadas por dados. Usuários ganham clareza sobre seus gastos, otimizam recursos e mantêm o foco em suas metas pessoais ou corporativas.",
-    image: placeholderImage,
+    image: spendImage,
     testemonial: "",
   },
 ];
