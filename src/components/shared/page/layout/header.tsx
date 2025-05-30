@@ -23,7 +23,6 @@ export function Header() {
     )[0] as HTMLElement;
     const blackSectionAnchor = headerRef.current?.querySelector(`a[href="${BLACK_SECTION}"]`) as HTMLAnchorElement;
   
-    console.log(window.location.hash, BLACK_SECTION.replace("/", ""), blackSection.id);
     if (window.location.hash === BLACK_SECTION.replace("/", "")) {
       gsap.to(headerRef.current, {
         color: "rgb(252, 251, 251)",
