@@ -77,7 +77,7 @@ export function Footer() {
           <li>
             <Link
               href={"https://www.linkedin.com/company/coderaw/"}
-              className="flex bg-primary py-2 px-4 rounded-md text-black font-item"
+              className="flex bg-primary flex items-center justify-center py-2 px-4 rounded-md text-black font-item"
               target="_blank"
               rel="noopener noreferrer"
             >
