@@ -71,27 +71,20 @@ export function Footer() {
           </li>
         </ul>
         <ul className="list-inside space-y-4 overflow-x-hidden">
-          <Link href={"/"} className="text-white text-[96px]">
+          <Link href={"/"} className="text-white h-[40px] flex items-center justify-center text-[96px]">
             <Logo />
           </Link>
           <li>
             <Link
-              href={"#services"}
-              className="flex px-3 items-center gap-2 text-sm text-muted-foreground hover:text-primary"
-            >
-              Servicos
-            </Link>
-          </li>
-          <li>
-            <Link
               href={"https://www.linkedin.com/company/coderaw/"}
-              className="flex px-3 items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+              className="flex bg-primary py-2 px-4 rounded-md text-black font-item"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Trabalhe conosco
             </Link>
           </li>
         </ul>
-
         <div className="h-full flex "></div>
       </section>
 

@@ -1,0 +1,1 @@
+export const BLACK_SECTION = "/#cases";

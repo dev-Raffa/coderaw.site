@@ -1,6 +1,5 @@
-import placeholderImage from "../../../../public/placeholder.svg"
 import smartImage from "../../../app/assets/images/system-smartconsig.jpg";
-import beeImage from "../../../app/assets/images/beeconversa.png";
+import beeImage from "../../../app/assets/images/beeconversa.jpeg";
 import spendImage from "../../../app/assets/images/spend-dashboard.jpeg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
@@ -28,12 +27,17 @@ export const cases: TCase[] = [
   },
   {
     name: "BeeConversa",
-    desafio:
-      "Auxiliar empresas enfrentam dificuldades para escalar a comunicação com seus clientes via WhatsApp, lidando com limitações em campanhas em massa, atendimento automatizado ineficiente e falta de dados estratégicos para tomada de decisão.",
-    solucao:
-      "O BeeConversa integra-se à API oficial do WhatsApp para oferecer uma plataforma completa de comunicação inteligente. Com campanhas em massa otimizadas por dados, atendimento via IA avançada baseada em LLMs com RAG, e uma infraestrutura flexível, a ferramenta transforma a forma como empresas se conectam com seu público.",
+    desafio: `Empresas buscam ampliar sua presença no WhatsApp, mas enfrentam barreiras para escalar. Campanhas em massa têm pouca personalização e impacto limitado. O atendimento automatizado muitas vezes soa engessado e impessoal. Além disso, faltam dados que apoiem decisões estratégicas com precisão.`,
+    solucao: 
+      `BeeConversa evolui o mercado com uma comunicação mais inteligente e flexível.
+      Integra-se à API oficial do WhatsApp com foco em escala, dados e personalização.
+      Oferece campanhas orientadas por dados, IA avançada (LLMs + RAG) e atendimento humano.
+      A escolha entre IA e operadores reais é ajustável conforme a estratégia da empresa.`,
     resultado:
-      "Mais engajamento, mais conversões e menos esforço. Com o BeeConversa, você automatiza o atendimento, toma decisões baseadas em dados reais e se comunica com milhares de clientes de forma personalizada, segura e escalável.",
+      `Empresas se comunicam melhor, com mais retorno e menos esforço operacional.
+      A IA atende com precisão, e o humano entra onde o contexto exige empatia.
+      Milhares de conversas ganham escala sem perder personalização e controle.
+      O resultado: mais engajamento, conversão e inteligência em cada interação.`,
     image: beeImage,
     testemonial: "",
   },

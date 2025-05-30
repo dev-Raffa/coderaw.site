@@ -1,9 +1,12 @@
+'use client'
 import { CasesList } from "@/components/lists/cases/grid-cases-lists";
-import { TestCasesList } from "@/components/lists/cases/teste";
 import DotPattern from "@/components/magic-ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { useRef, useState } from "react";
 
 export  const CasesSection = () => {
+
+
   return (
     <section
       id="cases"

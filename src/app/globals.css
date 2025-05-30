@@ -315,3 +315,7 @@
 .header-bg{
   background: rgba(255, 255, 255, 0.22);
 }
+
+.header-bg:has(ul li a[href="/#cases"].active) {
+  color: white;
+}

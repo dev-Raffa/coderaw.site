@@ -1,10 +1,20 @@
+'use client'
+
 import Link from "next/link";
 import { Logo } from "../icons/logo";
 import { subRouters } from "@/components/lists/sub-routers/sub-routers";
+import { useState } from "react";
+import { BLACK_SECTION } from "@/consts/black-section.const";
 
 export const Navigation = () => {
+  const [blackAnchorIsActive, setBlackAnchorIsActive] = useState(false);
+
+  const clickOnAnchorHandle = (anchor:string)=>{
+    anchor === BLACK_SECTION ? setBlackAnchorIsActive(true) : setBlackAnchorIsActive(false)
+  }
+  
   return (
-    <nav className="header-bg  shadow-md rounded-xl backdrop-blur-xl max-w-6xl w-full flex items-center justify-between h-[68px] p-4">
+    <nav className="header-bg shadow-md rounded-xl backdrop-blur-xl max-w-6xl w-full flex items-center justify-between h-[68px] p-4">
       <ul>
         <Link
           className="h-[56px] text-[96px] w-[220px] relative flex items-center rounded-[0.3rem]"
@@ -18,12 +28,14 @@ export const Navigation = () => {
         id="hs-navbar-header-floating"
         className="block hs-collapse overflow-hidden transition-all duration-300 basis-full grow"
       >
-        <div className="flex justify-end items-center gap-8 ps-8">
+        <li className="flex justify-end items-center gap-8 ps-8">
           {subRouters.map((router) => (
             <Link
               key={`router-${router.label}`}
               href={router.href}
-              className={`p-3 rounded-md text-base font-item hover:text-primary focus:outline-none`}
+              className={`${blackAnchorIsActive && router.href === BLACK_SECTION ? "active" : " "} p-3 rounded-md text-base font-item hover:text-primary focus:outline-none`}
+              target={router.label === "Trabalhe Conosco" ? "_blank" : "_self"}
+              onClick={() => clickOnAnchorHandle(router.href)}
             >
               {router.label}
             </Link>
@@ -35,7 +47,7 @@ export const Navigation = () => {
           >
             Fale com um especialista
           </Link>
-        </div>
+        </li>
       </ul>
     </nav>
   );

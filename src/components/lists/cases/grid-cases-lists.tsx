@@ -25,7 +25,7 @@ export function CasesList() {
             )}
             <article className="card-content backdrop-blur-md">
               <figure>
-                <Image src={caseItem.image} fill alt={caseItem.name} className="object-right object-cover" />
+                <Image src={caseItem.image} fill alt={caseItem.name} className="object-center object-cover" />
               </figure>
               <section>
                 <h3>{caseItem.name}</h3>
