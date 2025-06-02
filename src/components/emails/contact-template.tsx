@@ -48,7 +48,7 @@ export const ContactTemplateEmail = ({
           <Hr />
           <Section style={lowerSection}>
             <Text style={cautionText}>
-              A <strong>Coderaw.io</strong> é uma consultoris de software especializada {" "}
+              A <strong>Coderaw.io</strong> é uma consultoria de software especializada {" "}
               em soluções web para empresas de pequeno, médio e grande porte.
             </Text>
           </Section>
