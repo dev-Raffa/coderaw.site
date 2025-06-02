@@ -162,7 +162,7 @@
 }
 
 .section-texts{
-  @apply w-full md:w-[70%] min-w-[300px] pt-[50px] md:pt-[100px] flex flex-col items-center gap-2;
+  @apply w-full max-w-6xl md:w-[70%] min-w-[300px] pt-[50px] md:pt-[100px] flex flex-col items-center gap-2;
 }
 
 .section-title {
@@ -225,6 +225,7 @@
         &:focus {
           outline: none;
           border:none;
+          border-radius: 5px;
         }
       
       }
@@ -235,6 +236,7 @@
         &:hover{
           outline: 2px solid hsl(var(--primary));
           border:none;
+          border-radius: 5px;
         }
       }
       

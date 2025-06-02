@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
           <Image
             src={lgpdImg}
             fill
-            className="object-contain w-[90%] rounded-[0.3rem]"
+            className="rounded-[0.3rem]"
             alt="LGPD Imagem"
             priority
           />

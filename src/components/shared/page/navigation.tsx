@@ -9,8 +9,12 @@ import { BLACK_SECTION } from "@/consts/black-section.const";
 export const Navigation = () => {
   const [blackAnchorIsActive, setBlackAnchorIsActive] = useState(false);
 
-  const clickOnAnchorHandle = (anchor:string)=>{
-    anchor === BLACK_SECTION ? setBlackAnchorIsActive(true) : setBlackAnchorIsActive(false)
+  const clickOnAnchorHandle = (anchor:string) => {
+    if(anchor === BLACK_SECTION ) {
+      setBlackAnchorIsActive(true)
+    }else {
+      setBlackAnchorIsActive(false)
+    }
   }
   
   return (

@@ -1,3 +1,4 @@
+import { ContactEmailRequest } from '@/@types/email';
 import ContactTemplateEmail from '@/components/emails/contact-template';
 
 import { resendApiKey } from '@/lib/resend';
@@ -5,16 +6,13 @@ import { NextRequest } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, firstName, lastName } = await request.json();
+    const {name, email }: ContactEmailRequest = await request.json();
 
     const { data, error } = await resendApiKey.emails.send({
-      from: 'Coderaw <comercial@coderaw.io>',
-      to: [email],
-      subject: 'Contato',
-      react: ContactTemplateEmail({ 
-        firstName,
-        lastName
-      }),
+      from: "Acme <onboarding@resend.dev>",
+      to: ["mattheuscontato17@gmail.com"],
+      subject: "Contato",
+      react: ContactTemplateEmail({ name: name }),
     });
 
     if (error) {

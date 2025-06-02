@@ -12,12 +12,11 @@ import {
   Text
 } from "@react-email/components";
 
-import { EmailRequest } from "@/@types/email";
+import { ContactEmailRequest } from "@/@types/email";
 
 export const ContactTemplateEmail = ({ 
-  firstName,
-  lastName,
-}: EmailRequest) => (
+  name
+}: Pick<ContactEmailRequest, "name">) => (
   <Html>
     <Head />
     <Preview>Equipe comercial da Coderaw.io</Preview>
@@ -34,7 +33,7 @@ export const ContactTemplateEmail = ({
           </Section>
           <Section style={upperSection}>
             <Heading style={h1}>
-              Olá {firstName} {lastName}, <br />
+              Olá {name}, <br />
               agradecemos o interesse em nossos <br />
               serviços de tecnologia.
             </Heading>
@@ -42,20 +41,20 @@ export const ContactTemplateEmail = ({
               Em breve, nossa equipe comercial entrará em contato para obter mais informações sobre o seu contato.
               Enquanto isso, aproveite para conhecer nosso portfólio de projetos clicando no botão abaixo.
             </Text>
-            <Button style={button} href="https://www.google.com">
+            <Button style={button} href="https://coderaw.io/#cases">
               Visualizar nossos projetos
             </Button>
           </Section>
           <Hr />
           <Section style={lowerSection}>
             <Text style={cautionText}>
-              A <strong>Coderaw.io</strong> é uma butique de software especializada {" "}
+              A <strong>Coderaw.io</strong> é uma consultoris de software especializada {" "}
               em soluções web para empresas de pequeno, médio e grande porte.
             </Text>
           </Section>
         </Section>
         <Text style={footerText}>
-          © Coderaw Soluções Tecnológicas LTDA - 2024. Todos os direitos reservados.
+          © Coderaw Soluções Tecnológicas LTDA - 2025. Todos os direitos reservados.
         </Text>
       </Container>
     </Body>

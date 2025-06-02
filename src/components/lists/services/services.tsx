@@ -34,7 +34,6 @@ type advantage = {
   icon: React.ReactNode;
   label: string;
 }
-
 type service = {
   title: string;
   label:string;

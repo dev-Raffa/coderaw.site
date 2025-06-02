@@ -4,14 +4,14 @@ import { cases } from "./cases";
 
 export function CasesList() {
   return (
-    //@ts-expect-error
+    //@ts-expect-error TS does not know --columns property
     <ul id="cards" style={{ "--columns": 4 }}>
       {cases.map((caseItem, index) => {
         return (
           <li
             className="card"
             key={`case-card-${index}`}
-            //@ts-expect-error
+            //@ts-expect-error TS does not know --index property
             style={{ "--index": index + 1 }}
           >
             {index === 0 && (
@@ -25,7 +25,12 @@ export function CasesList() {
             )}
             <article className="card-content backdrop-blur-md">
               <figure>
-                <Image src={caseItem.image} fill alt={caseItem.name} className="object-center object-cover" />
+                <Image
+                  src={caseItem.image}
+                  fill
+                  alt={caseItem.name}
+                  className="object-center object-cover"
+                />
               </figure>
               <section>
                 <h3>{caseItem.name}</h3>

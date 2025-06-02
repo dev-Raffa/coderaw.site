@@ -25,7 +25,7 @@ export function HeroSection() {
             Fale com um especialista
           </Link>
         </div>
-        <div className="absolute bottom-[16px]  sm:bottom-[3px] left-[0]">
+        <div className="absolute bottom-[16px]  sm:bottom-[12px] left-[0]">
           <ToolsListSlide />
         </div>
       </div>

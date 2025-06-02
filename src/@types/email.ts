@@ -1,7 +1,16 @@
+
 export interface EmailRequest {
-  firstName: string;
-  lastName: string;
-  email?: string;
-  phoneNumber?: string;
-  message?: string;
+  email: string;
 }
+
+export interface ContactEmailRequest extends EmailRequest {
+  name: string
+}
+
+export interface LeadEmailRequest extends ContactEmailRequest {
+  company?: string;
+  message: string;
+  name: string;
+  services: string[];
+}
+

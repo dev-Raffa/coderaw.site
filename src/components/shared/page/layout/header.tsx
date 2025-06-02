@@ -8,7 +8,7 @@ import { Navigation } from "../navigation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef} from "react";
+import { useRef} from "react";
 import { BLACK_SECTION } from "@/consts/black-section.const";
 import { usePathname } from "next/navigation";
 
@@ -30,7 +30,7 @@ export function Header() {
       });
     } 
 
-    blackSection &&
+    if(blackSection) {
       ScrollTrigger.create({
         trigger: blackSection,
         start: "top top",
@@ -65,6 +65,7 @@ export function Header() {
           });
         },
       });
+    }
   }, [pathname]);
 
   return (
