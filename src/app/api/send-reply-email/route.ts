@@ -9,8 +9,8 @@ export async function POST(request: NextRequest) {
     const {name, email }: ContactEmailRequest = await request.json();
 
     const { data, error } = await resendApiKey.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["mattheuscontato17@gmail.com"],
+      from: "Coderaw.io <comercial@coderaw.io>",
+      to: [email],
       subject: "Contato",
       react: ContactTemplateEmail({ name: name }),
     });

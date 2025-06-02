@@ -14,9 +14,11 @@ export async function POST(request: NextRequest) {
     }: LeadEmailRequest = await request.json();
 
     const { data, error } = await resendApiKey.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Coderaw.io <comercial@coderaw.io>",
       to: [
-        "mattheuscontato17@gmail.com"
+        "mattheus.madureira@coderaw.io",
+        "felipe.matiolli@coderaw.io",
+        "giuseppe.battaglino@coderaw.io"
       ],
       subject: "Interesse nos serviços prestados",
       react: LeadTemplateEmail({
