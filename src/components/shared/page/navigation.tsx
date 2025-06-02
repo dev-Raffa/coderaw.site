@@ -47,7 +47,7 @@ export const Navigation = () => {
 
           <Link
             href={"#contact"}
-            className="bg-primary py-2 px-4 rounded-md text-black font-item"
+            className="hidden bg-primary lg:flex item-center justify-center py-2 px-4 rounded-md text-black font-item"
           >
             Fale com um especialista
           </Link>

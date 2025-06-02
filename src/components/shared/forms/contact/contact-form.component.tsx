@@ -12,7 +12,6 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(e.target)
     
     await fetch("/api/send-lead-email", {
       method: "POST",
@@ -30,7 +29,13 @@ export const ContactForm = () => {
     })
       .then(async (response) => {
         if (response.ok) {
-          await fetch("/api/send-reply-email", {method: "POST"}).then(()=>{
+          await fetch("/api/send-reply-email", {
+            method: "POST",
+            body: JSON.stringify({
+              name: name,
+              email: (e.target as HTMLFormElement).email.value,
+            })
+          }).then(()=>{
             toast.success("SUCESSO! RECEMOS O SEU CONTATO", {
               description:
                 "Em breve um de nossos consultores entrará em contato com você.",
