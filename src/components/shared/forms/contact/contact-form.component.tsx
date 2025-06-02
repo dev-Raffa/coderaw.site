@@ -30,7 +30,7 @@ export const ContactForm = () => {
     })
       .then(async (response) => {
         if (response.ok) {
-          await fetch("/api/send-reply-email").then(()=>{
+          await fetch("/api/send-reply-email", {method: "POST"}).then(()=>{
             toast.success("SUCESSO! RECEMOS O SEU CONTATO", {
               description:
                 "Em breve um de nossos consultores entrará em contato com você.",
