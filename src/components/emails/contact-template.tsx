@@ -38,7 +38,7 @@ export const ContactTemplateEmail = ({
               serviços de tecnologia.
             </Heading>
             <Text style={mainText}>
-              Em breve, nossa equipe comercial entrará em contato para obter mais informações sobre o seu contato.
+              Em breve, nossa equipe comercial entrará em contato para obter mais informações sobre o seu projeto.
               Enquanto isso, aproveite para conhecer nosso portfólio de projetos clicando no botão abaixo.
             </Text>
             <Button style={button} href="https://coderaw.io/#cases">
