@@ -37,7 +37,11 @@ export const Navigation = () => {
             <Link
               key={`router-${router.label}`}
               href={router.href}
-              className={`${blackAnchorIsActive && router.href === BLACK_SECTION ? "active" : " "} p-3 rounded-md text-base font-item hover:text-primary focus:outline-none`}
+              className={`${
+                blackAnchorIsActive && router.href === BLACK_SECTION
+                  ? "active"
+                  : " "
+              } p-3 rounded-md text-base text-nowrap font-item hover:text-primary focus:outline-none`}
               target={router.label === "Trabalhe Conosco" ? "_blank" : "_self"}
               onClick={() => clickOnAnchorHandle(router.href)}
             >
@@ -47,7 +51,7 @@ export const Navigation = () => {
 
           <Link
             href={"#contact"}
-            className="hidden bg-primary lg:flex item-center justify-center py-2 px-4 rounded-md text-black font-item"
+            className="hidden bg-primary lg:block text-center w-fit p-2 lg:px-4 rounded-md text-black font-item"
           >
             Fale com um especialista
           </Link>

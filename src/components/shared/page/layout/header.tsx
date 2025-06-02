@@ -72,12 +72,12 @@ export function Header() {
     <>
       <header
         ref={headerRef}
-        className={`hidden h-[100px] z-[102] fixed top-[0] flex items-center sm:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm`}
+        className={`hidden h-[100px] z-[102] fixed top-[0] flex items-center md:flex px-12 md:px-16 lg:px-24 flex-wrap top-0 inset-x-0 md:justify-center md:flex-nowrap z-50 w-full text-sm`}
       >
         <Navigation />
       </header>
 
-      <header className="h-16 w-full flex justify-between items-center p-4 gap-3 sm:hidden">
+      <header className="h-16 w-full flex justify-between items-center p-4 gap-3 md:hidden">
         <Link
           className="relative text-[96px] flex items-center rounded-[0.3rem]"
           href="/"
